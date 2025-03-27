@@ -2,6 +2,7 @@
     background-color: $banner;
 
     &__content{
+        width: 100%;
         &--description{
             font-size: $font-size-xs;
             margin: size(30) 0 size(66) 0;
@@ -14,21 +15,16 @@
             padding: size(16) size(8)!important;
             max-width: size(310);
             align-self: center;
-
         }
         .button{
             background-color: $button;
             border-radius: size(8);
             border: none;
-            
-            
-
         }
 
         .button-primary{
             border: none;
             background-color: $button !important;
-            
         }
     }
 }
