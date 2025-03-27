@@ -13,32 +13,27 @@ $entities = [
         'icon' => 'opportunity',
         'title' => 'Oportunidades',
         'route' => 'search/opportunities',
-        'description' => 'Aqui você pode fazer sua inscrição nos editais e oportunidades do Ministério da Cultura (Minc), bem como acompanhar as inscrições em andamento. Nesse espaço, você também pode acessar outras oportunidades da cultura; tais como, oficinas, prêmios e concursos; criar uma oportunidade e divulgá-la para outros agentes culturais.'
-    ],
+        'description' => 'Acesse ou crie oportunidades no campo das artes e divulgue para outros agentes artísticos.'],
     'events' => [
         'icon' => 'event',
         'title' => 'Eventos',
         'route' => 'search/events',
-        'description' => 'Você pode pesquisar eventos culturais cadastrados na plataforma filtrando por região, área da cultura, etc. Você também pode incluir seus eventos culturais na plataforma e divulgá-los gratuitamente.'
-    ],
+        'description' => 'Descubra uma série de eventos artísticos, de ação pontual ou continuada, presencial e/ou on-line, com programação interestadual e/ou internacional. São festivais, mostras, feiras, painéis e bienais, entre outros formatos.' ],
     'spaces' => [
         'icon' => 'space',
         'title' => 'Espaços',
         'route' => 'search/spaces',
-        'description' => 'Aqui você pode cadastrar seus espaços culturais e colaborar com o Mapa da Cultura! Além disso, você pode pesquisar por espaços culturais cadastrados na sua região; tais como teatros, bibliotecas, centros culturais e outros.'
-    ],
+        'description' => 'Encontre espaços artísticos brasileiros, como arenas, ateliês, casas de espetáculos, galerias, galpões, lonas, teatros, entre outros.' ],
     'agents' => [
         'icon' => 'agent-2',
         'title' => 'Agentes',
         'route' => 'search/agents',
-        'description' => 'Neste espaço, é possível buscar e conhecer os agentes culturais cadastrados no Mapa da Cultura. Explore a diversidade de artistas, produtores, grupos, coletivos, bandas, instituições, que fazem parte da cultura! Participe e seja protagonista da cultura brasileira!'
-    ],
+        'description' => 'Conheça artistas, grupos, coletivos e outros agentes artísticos cadastrados na Plataforma Rede das Artes.'  ],
     'projects' => [
         'icon' => 'project',
         'title' => 'Projetos',
         'route' => 'search/projects',
-        'description' => 'Aqui você encontra projetos culturais cadastrados pelos agentes culturais usuários da plataforma Mapa da Cultura.'
-    ]
+        'description' => 'Acompanhe projetos de agentes artísticos, com suas ações e agendas, de atualização contínua.']
 ];
 
 ?>
