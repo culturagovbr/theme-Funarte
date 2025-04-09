@@ -22,7 +22,7 @@ $config = $app->config['social-media'];
             <div class="main-footer__content--logo-img">
                 <theme-logo class="onlyImg" href="<?= $app->createUrl('site', 'index') ?>"></theme-logo>
             </div>
-    
+
             <div class="main-footer__content--logo-share">
                 <?php foreach ($config as $conf) : ?>
                     <a target="_blank" href="<?= $conf['link'] ?>">
@@ -32,11 +32,11 @@ $config = $app->config['social-media'];
             </div>
         </div>
         <?php $this->applyTemplateHook("main-footer-logo", "after")?>
-    
+
         <?php $this->applyTemplateHook("main-footer-links", "before")?>
         <div class="main-footer__content--links">
             <?php $this->applyTemplateHook("main-footer-links", "begin")?>
-    
+
             <ul class="main-footer__content--links-group">
                 <li>
                     <a><?php i::_e("Descubra"); ?></a>
@@ -67,7 +67,7 @@ $config = $app->config['social-media'];
                     </a>
                 </li>
             </ul>
-    
+
             <ul class="main-footer__content--links-group">
                 <li>
                     <a href="<?= $app->createUrl('panel', 'index') ?>"><?php i::_e('Painel de controle'); ?></a>
@@ -93,12 +93,12 @@ $config = $app->config['social-media'];
                     </li>
                 <?php endif; ?>
             </ul>
-    
+
             <ul class="main-footer__content--links-group">
                 <li>
                     <a><?php i::_e('Ajuda e privacidade'); ?></a>
                 </li>
-                
+
                 <li>
                     <a href="<?= $app->createUrl('faq') ?>"><?php i::_e('Ajuda e perguntas frequentes (FAQ)'); ?></a>
                 </li>
@@ -110,7 +110,7 @@ $config = $app->config['social-media'];
                 <li>
                     <a href="<?= $app->createUrl('lgpd', 'view', ['termsUse']) ?>"><?php i::_e('Autorização de uso de imagem'); ?></a>
                 </li>
-                
+
             <?php /* if (count($app->config['module.LGPD']) > 0): ?>
                 <?php foreach ($app->config['module.LGPD'] as $slug => $cfg) : ?>
                     <li>
@@ -121,26 +121,21 @@ $config = $app->config['social-media'];
             </ul>
             <?php $this->applyTemplateHook("main-footer-links", "end")?>
         </div>
-        <?php $this->applyTemplateHook("main-footer-links", "after")?>      
+        <?php $this->applyTemplateHook("main-footer-links", "after")?>
     </div>
     <?php $this->applyTemplateHook("main-footer-reg", "before")?>
     <div class="main-footer__reg">
         <?php $this->applyTemplateHook("main-footer-reg", "begin")?>
         <div class="main-footer__reg-content">
-            <p>
-                <?php i::_e("plataforma criada pela comunidade") ?> 
-                <span class="mapas"><?php i::_e("mapas culturais"); ?></span> 
-                <?php i::_e("e desenvolvida por "); ?><strong>hacklab<span style="color: red">/</span></strong>
-            </p>
 
-            <a class="link" href="https://github.com/culturagovbr/mapadacultura">
+            <a class="link" href="https://github.com/redemapas/theme-Funarte">
                 <?php i::_e("Conheça o repositório") ?>
                 <mc-icon name="github"></mc-icon>
             </a>
         </div>
         <?php $this->applyTemplateHook("main-footer-reg", "end")?>
     </div>
-    <?php $this->applyTemplateHook("main-footer-reg", "after")?>  
+    <?php $this->applyTemplateHook("main-footer-reg", "after")?>
     <?php $this->applyTemplateHook("main-footer", "end")?>
 </div>
 <?php $this->applyTemplateHook("main-footer", "after")?>
