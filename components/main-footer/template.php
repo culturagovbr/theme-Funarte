@@ -128,9 +128,14 @@ $config = $app->config['social-media'];
         <?php $this->applyTemplateHook("main-footer-reg", "begin")?>
         <div class="main-footer__reg-content">
 
-            <a class="link" href="https://github.com/redemapas/theme-Funarte">
+            <a class="link" href="https://github.com/redemapas/theme-Funarte" target="_blank">
                 <?php i::_e("Conheça o repositório") ?>
                 <mc-icon name="github"></mc-icon>
+            </a>
+
+            <a class="link" href="https://redemapas.github.io/manual/" target="_blank">
+                <?php i::_e("Acesse os manuais") ?>
+                <mc-icon name="attachment"></mc-icon>
             </a>
         </div>
         <?php $this->applyTemplateHook("main-footer-reg", "end")?>
