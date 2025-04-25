@@ -12,7 +12,7 @@ Esse comando fará com que o compilador do Sass fique monitorando a folha de est
 
 ## Selecionando o tema
 
-Para mudar o tema, é necessário alterar o **ACTIVE_THEME** no arquivo **docker-compose.yaml** para o namespace do tema definido no **Theme.php**. No caso do tema da Funarte, o namespace é **MapasCulturais\Themes\Funarte**. Depois disso, volte para a raíz do repositório e execute o seguinte comando para atualizar o contêiner em que o mapa está sendo executado:
+Para mudar o tema, é necessário alterar o **ACTIVE_THEME** no arquivo **docker-compose.yaml** para o namespace do tema definido no **Theme.php**. No caso do tema da Funarte, o namespace é **Funarte**. Depois disso, volte para a raíz do repositório e execute o seguinte comando para atualizar o contêiner em que o mapa está sendo executado:
 
 ```bash
 make dev
