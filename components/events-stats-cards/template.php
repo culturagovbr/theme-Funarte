@@ -31,7 +31,7 @@ $this->import('
             <div class="events-stats-cards__container__content__header">
                 <p class="events-stats-cards__container__content__header__quantity">{{ countOccurrences }}</p>
                 <div class="events-stats-cards__container__content__header__icon">
-                    <mc-icon name="docs"></mc-icon>
+                    <mc-icon name="dateWeek"></mc-icon>
                 </div>
             </div>
             <p class="events-stats-cards__container__content__description"><?= i::__('evento(s) realizado(s)') ?></p>
@@ -43,7 +43,7 @@ $this->import('
             <div class="events-stats-cards__container__content__header">
                 <p class="events-stats-cards__container__content__header__quantity">{{ countFinishedOcurrences }}</p>
                 <div class="events-stats-cards__container__content__header__icon">
-                    <mc-icon name="docs"></mc-icon>
+                    <mc-icon name="dateCheck"></mc-icon>
                 </div>
             </div>
             <p class="events-stats-cards__container__content__description"><?= i::__('evento(s) finalizado(s)') ?></p>
@@ -55,7 +55,7 @@ $this->import('
             <div class="events-stats-cards__container__content__header">
                 <p class="events-stats-cards__container__content__header__quantity">{{ countLastSevenDaysEvents }}</p>
                 <div class="events-stats-cards__container__content__header__icon">
-                    <mc-icon name="docs"></mc-icon>
+                    <mc-icon name="dateDay"></mc-icon>
                 </div>
             </div>
             <p class="events-stats-cards__container__content__description"><?= i::__('cadastrado(s) nos últimos 7 dias') ?></p>
