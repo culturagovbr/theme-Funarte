@@ -29,7 +29,8 @@ $this->breadcrumb = [
     <template v-if="global.auth.isLoggedIn" #create-button>
         <create-event #default="{modal}">
             <button @click="modal.open()" class="button button--primary button--icon">
-                <span><?= i::__('criar evento') ?></span>
+            <mc-icon name="add"></mc-icon>
+            <span><?= i::__('Criar Evento') ?></span>
             </button>
         </create-event>
     </template>
@@ -48,11 +49,6 @@ $this->breadcrumb = [
             </mc-tab>
             <mc-tab icon="map" label="<?php i::esc_attr_e('Mapa') ?>" slug="map">
                 <div class="search__tabs--map">
-                    <search-map-event :pseudo-query="pseudoQuery" position="map"></search-map-event>
-                </div>
-            </mc-tab>
-            <mc-tab icon="chart" label="<?php i::esc_attr_e('Indicadores') ?>" slug="chart">
-                <div class="search__tabs--chart">
                     <search-map-event :pseudo-query="pseudoQuery" position="map"></search-map-event>
                 </div>
             </mc-tab>
