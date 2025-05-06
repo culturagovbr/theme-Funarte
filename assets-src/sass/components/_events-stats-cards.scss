@@ -1,5 +1,4 @@
 .events-stats-cards {
-
     display:flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +8,6 @@
     max-width: size(1170);
 
     &__container {
-
         background-color:white;
         height: 5rem;
         border-radius:4px;
@@ -19,72 +17,51 @@
         justify-content: center;
     
         &__content {
-
             width: 90%;
 
             &__header{
-
                 display:flex;
                 flex-direction:row;
                 justify-content:space-between;
                 align-items:center;
     
                 &__quantity {
-
                     font-size: 2rem;
                     font-weight: bold;
-
                 }
     
                 &__icon {
-
                     color: $primary-500;
                 
                     svg {
                         width: 1rem;
                     }
-
                 }
-
             }
     
             &__description{
                 margin-top: 0.1rem;
             }
-
         }
     }
-
 }
 
 @media only screen and (max-width: size(900)) {
-
     .events-stats-cards {
-
         flex-direction: column;
 
         &__container {
-
             width: 100%;
-
         }
-
     }
-
 }
 
 @media only screen and (min-width: size(900)) {
-
     .events-stats-cards {
-
         flex-direction: row;
 
         &__container {
-
             width: 25%;
-
         }
-
     }
-
 }
