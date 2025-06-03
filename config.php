@@ -33,10 +33,10 @@ return [
             'title' => 'twitter',
             'link' => 'https://twitter.com/Funarte'
         ],
-        'instagram-icon' => [
-            'title' => 'instagram',
-            'link' => 'https://www.instagram.com/funarte/'
-        ],
+        // 'instagram-icon' => [
+        //     'title' => 'instagram',
+        //     'link' => 'https://www.instagram.com/funarte/'
+        // ],
         'youtube-icon' => [
             'title' => 'youtube',
             'link' => 'https://www.youtube.com/funarte'
