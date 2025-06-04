@@ -9,16 +9,35 @@ use MapasCulturais\i;
 $this->import('theme-logo');
 $config = $app->config['social-media'];
 
-$image_url_funarte   = $app->view->asset('img/logo-funarte.png', false);
-$image_url_governo   = $app->view->asset('img/logo-governo-federal.png', false);
-$image_white_mapas   = $app->view->asset('svg/mapas.svg', false);
-$image_github        = $app->view->asset('svg/github.svg', false);
+$image_url_funarte = $app->view->asset('img/logo-funarte.png', false);
+$image_url_governo = $app->view->asset('img/logo-governo-federal.png', false);
+
 $entities = [
-    'opportunities' => ['label' => 'Editais e Oportunidades', 'icon' => 'opportunity'],
-    'events' => ['label' => 'Eventos', 'icon' => 'event'],
-    'agents' => ['label' => 'Artistas', 'icon' => 'agent'],
-    'spaces' => ['label' => 'Espaços', 'icon' => 'space'],
-    'projects' => ['label' => 'Iniciativas', 'icon' => 'project'],
+    'opportunities' => [
+        'searchLabel' => 'Editais e Oportunidades',
+        'panelLabel'  => 'Minhas oportunidades',
+        'icon'        => 'opportunity'
+    ],
+    'events' => [
+        'searchLabel' => 'Eventos',
+        'panelLabel'  => 'Meus eventos',
+        'icon'        => 'event'
+    ],
+    'agents' => [
+        'searchLabel' => 'Artistas',
+        'panelLabel'  => 'Meus artistas',
+        'icon'        => 'agent'
+    ],
+    'spaces' => [
+        'searchLabel' => 'Espaços',
+        'panelLabel'  => 'Meus espaços',
+        'icon'        => 'space'
+    ],
+    'projects' => [
+        'searchLabel' => 'Iniciativas',
+        'panelLabel'  => 'Minhas iniciativas',
+        'icon'        => 'project'
+    ],
 ];
 ?>
 
@@ -44,30 +63,50 @@ $entities = [
 
                 <ul class="main-footer__content--links-group">
                     <li><a><?php i::_e("Descubra"); ?></a></li>
-                    <?php foreach ($entities as $entity => $data): ?>
-                        <li v-if="global.enabledEntities.<?= $entity ?>">
-                            <a href="<?= $app->createUrl('search', $entity) ?>">
-                                <mc-icon name="<?= $data['icon'] ?>"></mc-icon> <?php i::_e($data['label']); ?>
+                    <?php foreach ($entities as $key => $entity): ?>
+                        <li v-if="global.enabledEntities.<?= $key ?>">
+                            <a href="<?= $app->createUrl('search', $key) ?>">
+                                <mc-icon name="<?= $entity['icon'] ?>"></mc-icon> <?php i::_e($entity['searchLabel']) ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
 
                 <ul class="main-footer__content--links-group">
-                    <li><a><?php i::_e('Painel de controle'); ?></a></li>
-                    <?php foreach (['opportunities', 'events', 'agents', 'spaces', 'projects'] as $entity): ?>
-                        <li v-if="global.enabledEntities.<?= $entity ?>">
-                            <a href="<?= $app->createUrl('panel', $entity) ?>"><?php i::_e('Minhas ' . $entity); ?></a>
+                    <li>
+                        <a href="<?= $app->createUrl('panel', 'index') ?>"><?php i::_e('Painel de controle'); ?></a>
+                    </li>
+                    <?php foreach ($entities as $key => $entity): ?>
+                        <li v-if="global.enabledEntities.<?= $key ?>">
+                            <a href="<?= $app->createUrl('panel', $key) ?>"><?php i::_e($entity['panelLabel']) ?></a>
                         </li>
                     <?php endforeach; ?>
+                    <?php if (!($app->user->is('guest'))) : ?>
+                        <li>
+                            <a href="<?= $app->createUrl('auth', 'logout') ?>"><?php i::_e('Sair') ?></a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
 
                 <ul class="main-footer__content--links-group">
                     <li><a><?php i::_e('Ajuda e privacidade'); ?></a></li>
-                    <li><a href="<?= $app->createUrl('faq') ?>"><?php i::_e('Ajuda e perguntas frequentes (FAQ)'); ?></a></li>
-                    <li><a href="<?= $app->createUrl('terms') ?>"><?php i::_e('Termos de uso e Política de privacidade'); ?></a></li>
-                    <li><a href="<?= $app->createUrl('lgpd', 'view', ['autorizacao-uso-imagem']) ?>"><?php i::_e('Autorização de uso de imagem'); ?></a></li>
-                    <li><a href="<?= $app->createUrl('lgpd') ?>"><?php i::_e('Entenda a LGPD'); ?></a></li>
+                    <li><a href="<?= $app->createUrl('faq') ?>"><?php i::_e('Dúvidas frequentes'); ?></a></li>
+
+                    <?php if (!empty($app->config['module.LGPD'])): ?>
+                        <?php foreach ($app->config['module.LGPD'] as $slug => $cfg): ?>
+                            <li>
+                                <a href="<?= $app->createUrl('lgpd', 'view', [$slug]) ?>"><?= $cfg['title'] ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                    <li>
+                        <a href="https://github.com/redeMapas/mapas" target="_blank"><?php i::_e('Conheça o repositório'); ?></a>
+                    </li>
+                    <li>
+                        <a href="https://redemapas.github.io/manual" target="_blank"><?php i::_e('Acesse os manuais'); ?></a>
+                    </li>
+
                     <div class="main-footer__content--logo-share">
                         <?php foreach ($config as $conf): ?>
                             <a target="_blank" href="<?= $conf['link'] ?>">
@@ -87,24 +126,9 @@ $entities = [
 
     <div class="main-footer__beta-alert">
         <p>
-            <strong>Versão Beta</strong>
-            Você está em uma versão de teste da plataforma. Se encontrar qualquer divergência ou tiver dúvidas, entre em contato com o
-            <a href="mailto:suporte@exemplo.gov.br">suporte</a>.
+            <strong><?php i::_e('Versão Beta') ?></strong>
+            <?php i::_e('Você está em uma versão de teste da plataforma.') ?>
         </p>
-    </div>
-
-    <div class="main-footer__community">
-        <div class="main-footer__community-content">
-            <p>
-                plataforma criada pela comunidade
-                <img src="<?= $image_white_mapas ?>" alt="Ícone mapas culturais" />
-                <strong>mapas culturais</strong> e desenvolvida por <strong>hacklab<span class="highlight-slash">/</span></strong>
-            </p>
-            <a href="https://github.com/redeMapas/mapas" target="_blank" rel="noopener noreferrer">
-                visite o repositório
-                <img src="<?= $image_github ?>" alt="Ícone github" />
-            </a>
-        </div>
     </div>
 </div>
 <?php $this->applyTemplateHook("main-footer", "after") ?>
