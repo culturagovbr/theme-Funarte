@@ -25,10 +25,10 @@ $this->import('
     <div class="home-prosas-notices__content">
         <mc-tabs>
             <mc-tab label="<?= $this->text('title', i::__('Editais com inscrições abertas')) ?>" slug="openNotices">
-                <prosas-listagem-editais per-page=5 :edital-ids="idList" :client-id="clientId"></prosas-listagem-editais>
+                <prosas-listagem-editais per-page=5 not-show="pesquisa" :edital-ids="idList" :client-id="clientId"></prosas-listagem-editais>
             </mc-tab>
             <mc-tab label="<?= $this->text('title', i::__('Editais com inscrições encerradas')) ?>" slug="closedNotices">
-                <prosas-listagem-editais encerrados="required" per-page=5 :edital-ids="idList" :client-id="clientId"></prosas-listagem-editais>
+                <prosas-listagem-editais encerrados="required" per-page=5 not-show="pesquisa" :edital-ids="idList" :client-id="clientId"></prosas-listagem-editais>
             </mc-tab>
         </mc-tabs>
     </div>
