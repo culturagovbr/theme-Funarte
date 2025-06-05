@@ -127,7 +127,7 @@ $entities = [
     <div class="main-footer__beta-alert">
         <p>
             <strong><?php i::_e('Versão Beta') ?></strong>
-            <?php i::_e('Você está em uma versão de teste da plataforma.') ?>
+            <?php i::_e('Você está em uma versão de teste da plataforma. Se encontrar qualquer divergência ou tiver dúvidas, entre em contato com o suporte.') ?>
         </p>
     </div>
 </div>
