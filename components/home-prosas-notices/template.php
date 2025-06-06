@@ -16,7 +16,7 @@ $this->import('
 <div class="home-prosas-notices">
     <div class="home-prosas-notices__header">
         <div class="home-prosas-notices__header title">
-            <label><?= $this->text('title', i::__('Oportunidades Culturais')) ?></label>
+            <label><?= $this->text('title', i::__('Oportunidades Artísticas')) ?></label>
         </div>
         <div class="home-prosas-notices__header description">
             <label><?= $this->text('description', i::__('Acompanhe as oportunidades artísticas disponíveis no momento. Aqui você encontra editais com inscrições abertas para projetos, ações artísticas e iniciativas de internacionalização.')) ?></label>
