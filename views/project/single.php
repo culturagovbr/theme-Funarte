@@ -27,9 +27,7 @@ $this->import('
     mc-share-links
     mc-tab
     mc-tabs
-    search
-    search-filter-event
-    search-list-event
+    search-list-agenda
 ');
 
 $label = $this->isRequestedEntityMine() ? i::__('Meus projetos') : i::__('Projetos');
@@ -158,11 +156,11 @@ if($children_id ){
         </mc-tab>
         <mc-tab icon="event" label="<?= i::_e('Agenda') ?>" slug="agenda">
             <div class="search__tabs--list">
-                <search-list-event 
+                <search-list-agenda 
                     :pseudo-query='<?= json_encode([
                         "event:project" => $entity->id,
-                        "@from" => date('Y-m-d'),
-                        "@to" => date('Y-m-d', strtotime("+30 days")),
+                        "@from" => date("Y-m-d"),
+                        "@to" => date("Y") . "-12-31"
                     ]) ?>'
                     select="id,name,subTitle,files.avatar,seals,terms,classificacaoEtaria,singleUrl,project"
                     space-select="id,name,endereco,files.avatar,singleUrl"
