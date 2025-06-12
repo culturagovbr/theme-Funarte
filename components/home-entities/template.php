@@ -14,9 +14,7 @@ $entities = [
         'icon' => 'opportunity',
         'title' => 'Oportunidades',
         'route' => 'search/opportunities',
-        'description' => 'Aqui você conhece os participantes da Rede das Artes e pode se inscrever para fazer parte. São as gentes, os agentes das artes como grupos, coletivos, produtores, técnicos, realizadores, programadores, festivais, gestores que atuam com as artes visuais, circo, dança, música, teatro e artes integradas, entre outros setores artísticos.   
-'
-    ],
+        'description' => 'Acesso a inúmeras possibilidades de conexão com a Rede das Artes. Aqui você encontra atividades com inscrições abertas, como convocatórias, oficinas, intercâmbios e residências artísticas, editais, eventos e demais oportunidades acessíveis. Você também pode criar e ofertar oportunidades para outros agentes da Rede.'],
     'events' => [
         'icon' => 'event',
         'title' => 'Eventos',
@@ -33,8 +31,7 @@ $entities = [
         'icon' => 'agent-2',
         'title' => 'Agentes',
         'route' => 'search/agents',
-        'description' => 'Aqui você conhece os participantes da Rede das Artes e pode se inscrever para fazer parte. São as gentes, os agentes das artes como grupos, coletivos, produtores, técnicos, realizadores, programadores, festivais, gestores que atuam com as artes visuais, circo, dança, música, teatro e artes integradas, entre outros setores artísticos.'
-    ],
+        'description' => 'Conheça artistas, grupos, coletivos e outros agentes artísticos cadastrados na Plataforma Rede das Artes. Aqui você conhece os participantes da Rede das Artes e pode se inscrever para fazer parte. São agentes das artes, realizadores de festivais, grupos e coletivos de artes visuais, circo,  dança, música, teatro e artes integradas.'],
     'projects' => [
         'icon' => 'project',
         'title' => 'Projetos',
