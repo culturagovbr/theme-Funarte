@@ -17,10 +17,10 @@ $this->import('
 <div class="home-prosas-notices">
     <div class="home-prosas-notices__header">
         <div class="home-prosas-notices__header title">
-            <label><?= $this->text('title', i::__('Chamadas e Convocatórias Funarte')) ?></label>
+            <label><?= $this->text('title', i::__('Editais e Convocatórias')) ?></label>
         </div>
         <div class="home-prosas-notices__header description">
-            <label><?= $this->text('description', i::__('Acesse as chamadas/convocatórias públicas com inscrições abertas e processos já finalizados.')) ?></label>
+            <label><?= $this->text('description', i::__('Acesse as editais e convocatórias públicas com inscrições abertas e processos já finalizados.')) ?></label>
         </div>
     </div>
     <div class="home-prosas-notices__content">
