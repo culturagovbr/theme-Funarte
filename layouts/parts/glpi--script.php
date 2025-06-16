@@ -219,6 +219,15 @@
 
     <form id="helpForm" class="help-form" autocomplete="off">
       <input
+        type="text"
+        id="helpNome"
+        name="nome"
+        placeholder="Seu nome"
+        class="help-form-input"
+        autocomplete="off"
+        required
+      />
+      <input
         type="email"
         id="helpEmail"
         name="email"
@@ -231,15 +240,14 @@
         type="tel"
         id="helpTelefone"
         name="telefone"
-        placeholder="Telefone (ex: +55 11 91234-5678)"
+        placeholder="Telefone (opcional - ex: +55 11 91234-5678)"
         maxlength="19"
         class="help-form-input"
         autocomplete="off"
-        required
       />
       <textarea
-        id="helpDescription"
-        name="description"
+        id="helpMensagem"
+        name="mensagem"
         placeholder="Digite sua mensagem..."
         class="help-form-textarea"
         autocomplete="off"
@@ -316,13 +324,14 @@
   helpForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const nome = document.getElementById('helpNome').value;
     const email = document.getElementById('helpEmail').value;
     const telefone = document.getElementById('helpTelefone').value;
-    const description = document.getElementById('helpDescription').value;
+    const mensagem = document.getElementById('helpMensagem').value;
 
-    // Basic validation
-    if (!email || !telefone || !description) {
-      showFormMessage('Por favor, preencha todos os campos.', true);
+    // Basic validation for required fields
+    if (!nome || !email || !mensagem) {
+      showFormMessage('Por favor, preencha todos os campos obrigatórios (nome, email e mensagem).', true);
       return;
     }
 
@@ -333,11 +342,13 @@
       return;
     }
 
-    // Phone validation (Brazilian format)
-    const phoneRegex = /^\([1-9]{2}\)\s9[0-9]{4}-[0-9]{4}$/;
-    if (!phoneRegex.test(telefone)) {
-      showFormMessage('Por favor, insira um telefone válido no formato (XX) 9XXXX-XXXX.', true);
-      return;
+    // Phone validation (Brazilian format) - only if provided
+    if (telefone && telefone.trim() !== '') {
+      const phoneRegex = /^\([1-9]{2}\)\s9[0-9]{4}-[0-9]{4}$/;
+      if (!phoneRegex.test(telefone)) {
+        showFormMessage('Por favor, insira um telefone válido no formato (XX) 9XXXX-XXXX ou deixe em branco.', true);
+        return;
+      }
     }
 
     // Disable submit button during submission
@@ -348,19 +359,26 @@
 
     try {
       const currentDomain = window.location.hostname;
+      const timestamp = new Date().toISOString();
+      const source = window.location.href;
+      
+      // Append timestamp and source to the message content
+      const mensagemCompleta = `${mensagem}\n\n---\nTimestamp: ${timestamp}\nSource: ${source}`;
+      
       // Prepare form data for external submission
       const formData = new FormData();
+      formData.append('nome', nome);
       formData.append('email', email);
-      formData.append('telefone', telefone);
-      formData.append('description', description);
-      formData.append('timestamp', new Date().toISOString());
-      formData.append('source', window.location.href);
+      formData.append('telefone', telefone || '');
+      formData.append('mensagem', mensagemCompleta);
+      formData.append('timestamp', timestamp);
+      formData.append('source', source);
 
       let urlGlpi = 'http://localhost4242/index_old.php'; // Default URL for local testing
 
       // Choose the urlGlpi based on the detected domain using regular expressions
       if (/cultura.gov.br$/.test(currentDomain)) {
-          urlGlpi = 'https://glpi-rede-das-artes.funarte.gov.br/index_old.php';
+          urlGlpi = 'https://sistema.funarte.gov.br/cotic/rededasartes/processa-chamado.php';
       } else if (/funarte.gov.br$/.test(currentDomain)) {
           urlGlpi = 'https://l0ow08gcs8w48gogsggc0skk.rda-hmg.funarte.gov.br/index_old.php';
       }
