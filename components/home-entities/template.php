@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var MapasCulturais\App $app
  * @var MapasCulturais\Themes\BaseV2\Theme $this
@@ -13,27 +14,30 @@ $entities = [
         'icon' => 'opportunity',
         'title' => 'Oportunidades',
         'route' => 'search/opportunities',
-        'description' => 'Acesse ou crie oportunidades no campo das artes e divulgue para outros agentes artísticos.'],
+        'description' => 'Acesso a inúmeras possibilidades de conexão com a Rede das Artes. Aqui você encontra atividades com inscrições abertas, como convocatórias, oficinas, intercâmbios e residências artísticas, editais, eventos e demais oportunidades acessíveis. Você também pode criar e ofertar oportunidades para outros agentes da Rede.'],
     'events' => [
         'icon' => 'event',
         'title' => 'Eventos',
         'route' => 'search/events',
-        'description' => 'Descubra uma série de eventos artísticos, de ação pontual ou continuada, presencial e/ou on-line, com programação interestadual e/ou internacional. São festivais, mostras, feiras, painéis e bienais, entre outros formatos.' ],
+        'description' => 'Aqui você pode inscrever o seu evento e também se conectar com propostas curatoriais diversas, programações artísticas de abrangência local, interestadual e/ou internacional. São festivais, bienais, encontros, feiras, mostras, salões, fóruns que propõem apresentações artísticas, exibições públicas, ações de formação, articulação e difusão.'
+    ],
     'spaces' => [
         'icon' => 'space',
         'title' => 'Espaços',
         'route' => 'search/spaces',
-        'description' => 'Encontre espaços artísticos brasileiros, como arenas, ateliês, casas de espetáculos, galerias, galpões, lonas, teatros, entre outros.' ],
+        'description' => 'Aqui você encontra espaços culturais e artísticos situados no território nacional que atuam de forma contínua e estruturada e conheça as ações ofertadas e possibilidades de parcerias. São casas de espetáculos e shows, galpões, centros coreográficos, salas de concertos, centros de referência, teatros, lonas circenses e centros culturais. Cadastre também os espaços onde desenvolve suas atividades.'
+    ],
     'agents' => [
         'icon' => 'agent-2',
         'title' => 'Agentes',
         'route' => 'search/agents',
-        'description' => 'Conheça artistas, grupos, coletivos e outros agentes artísticos cadastrados na Plataforma Rede das Artes.'  ],
+        'description' => 'Conheça artistas, grupos, coletivos e outros agentes artísticos cadastrados na Plataforma Rede das Artes. Aqui você conhece os participantes da Rede das Artes e pode se inscrever para fazer parte. São agentes das artes, realizadores de festivais, grupos e coletivos de artes visuais, circo,  dança, música, teatro e artes integradas.'],
     'projects' => [
         'icon' => 'project',
         'title' => 'Projetos',
         'route' => 'search/projects',
-        'description' => 'Acompanhe projetos de agentes artísticos, com suas ações e agendas, de atualização contínua.']
+        'description' => 'Aqui você pode acompanhar as ações da Rede das Artes: apresentações artísticas, ações de pesquisa, reflexão, intercâmbios, criação, oficinas, cursos, entre outras. Uma agenda cultural que integra iniciativas artísticas de todo o Brasil.'
+    ]
 ];
 
 ?>
