@@ -186,9 +186,4 @@ return [
             'search'        => i::__('Busca')
         ]
     ],
-
-    // ##### plugin-Metabase #####
-    'Metabase' => [
-        'enabled' => env('METABASE_FUNARTE_ENABLED', false),
-    ]
 ];
