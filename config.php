@@ -185,5 +185,10 @@ return [
             'create'        => i::__('Criando novo'),
             'search'        => i::__('Busca')
         ]
+    ],
+
+    // ##### plugin-Metabase #####
+    'Metabase' => [
+        'enabled' => env('METABASE_FUNARTE_ENABLED', false),
     ]
 ];
