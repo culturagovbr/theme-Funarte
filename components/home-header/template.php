@@ -6,17 +6,22 @@
 ?>
 
 <?php
-$image_url = $app->view->asset('img/home/home-header/logo-banner.png', false);
+$logo_url = $app->view->asset('img/home/home-header/logo-banner.png', false);
 ?>
 
-<div class="home-header" style="height: 576px">
-  <div class="home-header__background">
-    <div class="img">
-      <img :src="background" alt="Imagem de fundo" />
-    </div>
-  </div>
-  <div class="home-header__overlay">
-    <img src="<?= $image_url ?>" alt="Logo Funarte" />
-  </div>
+<?php
+$mapa_url = $app->view->asset('img/home/home-header/mapa-banner.jpg', false);
+?>
 
-</div>
+<section class="hero">
+    <div class="hero-text">
+      <img src="<?= $logo_url ?>" alt="Logo Funarte" />
+      <h1>Bem-vindo à Plataforma<br>Rede das Artes</h1>
+		<p>
+			Aqui você encontra e participa de uma rede vibrante de eventos, circuitos, grupos, coletivos e espaços dedicados às <strong>artes visuais, circo, dança, música, teatro e artes integradas</strong>, de todas as regiões do Brasil. Um ambiente artístico onde diferentes expressões e comunidades se encontram, se conectam e fortalecem umas às outras, criando a <strong>Rede das Artes</strong>. É um espaço fértil para criar <strong>parcerias</strong>, reconhecer <strong>oportunidades</strong>, e ofertar a toda a população uma grande <strong>agenda cultural</strong>, contribuindo para uma cena artística mais <strong>inclusiva e colaborativa.</strong>
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="<?= $mapa_url ?>" alt="Mapa com Linhas Culturais" />
+    </div>
+</section>
