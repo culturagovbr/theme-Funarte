@@ -185,5 +185,5 @@ return [
             'create'        => i::__('Criando novo'),
             'search'        => i::__('Busca')
         ]
-    ]
+    ],
 ];
