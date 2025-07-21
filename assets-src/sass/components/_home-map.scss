@@ -15,9 +15,11 @@
         width: 100%;
 
         .title {
-            font-size: size(32);
-            font-weight: 700;
+            font-size: size(70);
+            font-weight: 400;
             line-height: size(44);  
+            font-family: "League Gothic", sans-serif;
+            
 
             @media (max-width:size(800)) {
                 font-size: size(24);
