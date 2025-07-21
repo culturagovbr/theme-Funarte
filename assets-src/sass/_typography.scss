@@ -1,8 +1,10 @@
-@font-face {
-    font-display: swap;
-    font-family: 'Open Sans';
+    @font-face {
+    font-display: swap;     
+    font-family: 'League Gothic';
     font-style: normal;
-    font-weight:400;
-    src: 
-         url('/assets/fonts/LeagueGothic-Regular.ttf') format('truetype');
-}
+    font-weight: 400;
+    src:url('/assets/fonts/LeagueGothic-Regular.ttf') format('truetype'),
+        url('/assets/fonts/league-gothic-v12-latin-regular.woff2') format('woff2');
+        
+  }
+  
