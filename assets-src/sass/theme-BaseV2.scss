@@ -50,6 +50,7 @@ $low-500: #2a327f;
 // $font-headings: 'Open Sans', sans-serif;
 
 // // Borders radius
+$border-radius-xxs: 2px;
 // $border-radius-xs: 4px;
 // $border-radius-sm: 8px;
 // $border-radius-pill: 64px;
@@ -75,6 +76,7 @@ $low-500: #2a327f;
 @import './components/home-prosas-notices';
 @import './layouts/home-register';
 @import './layouts/main-footer';
+@import './layouts/main-header';
 @import './pages/search';
 
 .mc-header-logo {
