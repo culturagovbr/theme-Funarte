@@ -41,10 +41,15 @@ $home-opportunities: #f5bb50;
 $home-feature: #45B648;
 $home-register: #036293;
 
+
+
 // // Neutral colors
 $low-500: #2a327f;
 // $high-500: #FFFFFF;
 
+//FONTS 
+
+$font-title: 'League Gothic', sans-serif !default;
 // // FONTS
 // $font-body: 'Open Sans', sans-serif;
 // $font-headings: 'Open Sans', sans-serif;
@@ -80,4 +85,9 @@ $low-500: #2a327f;
 
 .mc-header-logo {
     max-width: 9rem;
+}
+
+
+:root{
+    --mc-font-title: #{$font-title};
 }
