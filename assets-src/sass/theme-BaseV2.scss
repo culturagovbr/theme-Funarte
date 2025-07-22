@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
 // COLORS
 $black: #1E1E1E !default;
 $error: #D2381B !default;
@@ -13,6 +15,8 @@ $gray-color-txt: #1E1E1E !default;
 $warning: #FFCA3A !default;
 $white: #FFFFFF !default;
 $banner:#181b4e !default;
+$banner-register:#2F4795!default;
+$banner-figure:#E20635!default;
 $button:#2b74d9 !default;
 $pink: #FFCFCF !default;
 $home-map-title: #575757!default;
@@ -55,8 +59,8 @@ $low-500: #2a327f;
 
 $font-title: 'League Gothic', sans-serif !default;
 // // FONTS
-// $font-body: 'Open Sans', sans-serif;
-// $font-headings: 'Open Sans', sans-serif;
+
+$font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
 $border-radius-xxs: 2px;
