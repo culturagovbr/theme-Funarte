@@ -1,5 +1,7 @@
 @use 'sass:color';
 
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
 // COLORS
 $black: #1E1E1E !default;
 $error: #D2381B !default;
@@ -48,8 +50,8 @@ $low-500: #2a327f;
 // $high-500: #FFFFFF;
 
 // // FONTS
-// $font-body: 'Open Sans', sans-serif;
-// $font-headings: 'Open Sans', sans-serif;
+
+$font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
 // $border-radius-xs: 4px;
