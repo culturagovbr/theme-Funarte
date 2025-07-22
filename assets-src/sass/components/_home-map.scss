@@ -21,6 +21,7 @@
             font-family: $font-title;
             margin-bottom: size(16);
             color: $home-map-title;
+            text-transform: uppercase;
             
 
             @media (max-width:size(800)) {
