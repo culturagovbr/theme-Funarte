@@ -72,14 +72,14 @@
     background-color: white;
     box-shadow: var(--mc-shadow-lv1);
     width: 100%;
-    padding: size(30) size(135);
+    padding: size(18) size(135);
 
     @media (max-width: size(1700)) {
-        padding: size(30) size(60);
+        padding: size(18) size(60);
     }
 
     @media (max-width: size(1400)) {
-        padding: size(30) size(15);
+        padding: size(18) size(15);
     }
 
     &__content {

@@ -30,12 +30,12 @@ $this->import('
             <!-- Menu principal -->
             <template #default>
                 <?php $this->applyTemplateHook('mc-header-menu', 'begin') ?>
-                
+                <!-- TODO: DESIGN PENDENTE -> Redirecionar para a nova tela de agenda -->
                 <?php $this->applyTemplateHook('mc-header-menu-home', 'before') ?>
                 <li>
                     <?php $this->applyTemplateHook('mc-header-menu-home', 'begin') ?>
                     <a href="<?= $app->createUrl('site', 'index') ?>" class="mc-header-menu--item home">
-                        <p class="label"> <?php i::_e('Home') ?> </p>
+                        <p class="label"> <?php i::_e('Agenda') ?> </p>
                     </a>
                     <?php $this->applyTemplateHook('mc-header-menu-home', 'end') ?>
                 </li>
@@ -80,16 +80,16 @@ $this->import('
                     <?php $this->applyTemplateHook('mc-header-menu-spaces', 'end') ?>
                 </li>
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'after') ?>
-
-                <?php $this->applyTemplateHook('mc-header-menu-projects', 'before') ?>
-                <li v-if="global.enabledEntities.projects">
-                    <?php $this->applyTemplateHook('mc-header-menu-projects', 'begin') ?>
-                    <a href="<?= $app->createUrl('search', 'projects') ?>" class="mc-header-menu--item project">
-                        <p class="label"> <?php i::_e('Projetos') ?> </p>
+                <!-- TODO: DESIGN PENDENTE -> Redirecionar para a nova tela de circuitos -->
+                <?php $this->applyTemplateHook('mc-header-menu-spaces', 'before') ?>
+                <li v-if="global.enabledEntities.spaces">
+                    <?php $this->applyTemplateHook('mc-header-menu-spaces', 'begin') ?>
+                    <a href="<?= $app->createUrl('search', 'spaces') ?>" class="mc-header-menu--item spaces">
+                        <p class="label"> <?php i::_e('Circuitos') ?> </p>
                     </a>
-                    <?php $this->applyTemplateHook('mc-header-menu-projects', 'end') ?>
+                    <?php $this->applyTemplateHook('mc-header-menu-spaces', 'end') ?>
                 </li>
-                <?php $this->applyTemplateHook('mc-header-menu-projects', 'after') ?>
+                <?php $this->applyTemplateHook('mc-header-menu-spaces', 'after') ?>
                 
                 <?php $this->applyTemplateHook('mc-header-menu', 'end') ?>
             </template>
