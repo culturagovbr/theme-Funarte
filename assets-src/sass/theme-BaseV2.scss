@@ -1,5 +1,7 @@
 @use 'sass:color';
 
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
 // COLORS
 $black: #1E1E1E !default;
 $error: #D2381B !default;
@@ -12,6 +14,7 @@ $white: #FFFFFF !default;
 $banner:#181b4e !default;
 $button:#2b74d9 !default;
 $pink: #FFCFCF !default;
+$home-map-title: #575757!default;
 
 // Default lightness deltas
 $lightness-300: 25%;
@@ -81,7 +84,7 @@ $font-title: 'League Gothic', sans-serif !default;
 @import './layouts/home-register';
 @import './layouts/main-footer';
 @import './pages/search';
-@import './typography';
+
 
 .mc-header-logo {
     max-width: 9rem;
