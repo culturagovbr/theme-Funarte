@@ -60,17 +60,6 @@ $this->import('
                     <?php $this->applyTemplateHook('mc-header-menu-agent', 'end') ?>
                 </li>
                 <?php $this->applyTemplateHook('mc-header-menu-agent', 'after') ?>
-
-                <?php $this->applyTemplateHook('mc-header-menu-events', 'before') ?>
-                <li v-if="global.enabledEntities.events">
-                    <?php $this->applyTemplateHook('mc-header-menu-events', 'begin') ?>
-                    <a href="<?= $app->createUrl('search', 'events') ?>" class="mc-header-menu--item event">
-                        <p class="label"> <?php i::_e('Eventos') ?> </p>
-                    </a>
-                    <?php $this->applyTemplateHook('mc-header-menu-events', 'end') ?>
-                </li>
-                <?php $this->applyTemplateHook('mc-header-menu-events', 'after') ?>
-
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'before') ?>
                 <li v-if="global.enabledEntities.spaces">
                     <?php $this->applyTemplateHook('mc-header-menu-spaces', 'begin') ?>
@@ -80,6 +69,15 @@ $this->import('
                     <?php $this->applyTemplateHook('mc-header-menu-spaces', 'end') ?>
                 </li>
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'after') ?>
+                <?php $this->applyTemplateHook('mc-header-menu-events', 'before') ?>
+                <li v-if="global.enabledEntities.events">
+                    <?php $this->applyTemplateHook('mc-header-menu-events', 'begin') ?>
+                    <a href="<?= $app->createUrl('search', 'events') ?>" class="mc-header-menu--item event">
+                        <p class="label"> <?php i::_e('Eventos') ?> </p>
+                    </a>
+                    <?php $this->applyTemplateHook('mc-header-menu-events', 'end') ?>
+                </li>
+                <?php $this->applyTemplateHook('mc-header-menu-events', 'after') ?>
                 <!-- TODO: DESIGN PENDENTE -> Redirecionar para a nova tela de circuitos -->
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'before') ?>
                 <li v-if="global.enabledEntities.spaces">
