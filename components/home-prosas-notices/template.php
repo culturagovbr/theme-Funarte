@@ -16,10 +16,13 @@ $this->import('
 
 <div class="home-prosas-notices">
     <div class="home-prosas-notices__header">
-        <div class="home-prosas-notices__header title">
+        <div class="home-prosas-notices__header--title">
             <label><?= $this->text('title', i::__('FOMENTO ÀS ARTES')) ?></label>
         </div>
-        <div class="home-prosas-notices__header description">
+        <div class="home-prosas-notices__header--icon">
+            <img src="<? echo $app->view->asset('img/home/home-prosas-notices/icon-bandeira.png', false); ?>" alt="">
+        </div>
+        <div class="home-prosas-notices__header--description">
             <label><?= $this->text('description', i::__('Acompanhe as oportunidades artísticas disponíveis no momento. Aqui você encontra editais com inscrições abertas para projetos, ações artísticas e iniciativas de internacionalização.')) ?></label>
         </div>
     </div>

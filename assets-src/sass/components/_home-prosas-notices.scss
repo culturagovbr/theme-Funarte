@@ -20,7 +20,7 @@
 
 	&__header {
 
-		&.title {
+		&--title {
 			display: flex;
 			justify-content: space-between;
 			margin: 0;
@@ -36,7 +36,7 @@
 			}
 		}
 
-		&.description {
+		&--description {
 			font-size: size(16);
 			font-weight: 400;
 			line-height: size(22);
