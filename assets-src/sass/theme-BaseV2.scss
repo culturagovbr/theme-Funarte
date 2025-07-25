@@ -1,10 +1,6 @@
 @use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-
 // COLORS
 $black: #1E1E1E !default;
 $error: #D2381B !default;
@@ -19,6 +15,7 @@ $banner-register:#2F4795!default;
 $banner-figure:#E20635!default;
 $button:#2b74d9 !default;
 $pink: #FFCFCF !default;
+$white:#FFFFFF;
 $home-map-title: #575757!default;
 
 // Default lightness deltas
