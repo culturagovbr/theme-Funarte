@@ -105,7 +105,7 @@ $entities = [
                         <a href="https://github.com/redeMapas/mapas" target="_blank"><?php i::_e('Conheça o repositório'); ?></a>
                     </li>
                     <li>
-                        <a href="https://redemapas.github.io/manual" target="_blank"><?php i::_e('Acesse os manuais'); ?></a>
+                        <a href="https://manual.mapas.tec.br/ " target="_blank"><?php i::_e('Acesse os manuais'); ?></a>
                     </li>
 
                     <div class="main-footer__content--logo-share">
