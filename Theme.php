@@ -1,6 +1,6 @@
 <?php
 
-namespace MapasCulturais\Themes\Funarte;
+namespace Funarte;
 
 use MapasCulturais\App;
 use MapasCulturais\API;
