@@ -35,8 +35,9 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
             }
         });
 
-        $app->hook('template(<<*>>.<<*>>.body):after', function(){
-            $this->part('glpi--script');
+        $app->hook('template(<<*>>.<<*>>.body):begin', function(){
+            /** @var \MapasCulturais\Theme $this */
+            $this->part('glpi-form');
         });
     }
 }
