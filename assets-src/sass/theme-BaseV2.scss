@@ -1,4 +1,5 @@
 @use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 // COLORS
 $black: #1E1E1E !default;
@@ -10,8 +11,12 @@ $gray-color-txt: #1E1E1E !default;
 $warning: #FFCA3A !default;
 $white: #FFFFFF !default;
 $banner:#181b4e !default;
+$banner-register:#2F4795!default;
+$banner-figure:#E20635!default;
 $button:#2b74d9 !default;
 $pink: #FFCFCF !default;
+$white:#FFFFFF;
+$home-map-title: #575757!default;
 
 // Default lightness deltas
 $lightness-300: 25%;
@@ -41,15 +46,21 @@ $home-opportunities: #f5bb50;
 $home-feature: #45B648;
 $home-register: #036293;
 
+
+
 // // Neutral colors
 $low-500: #2a327f;
 // $high-500: #FFFFFF;
 
+//FONTS 
+
+$font-title: 'League Gothic', sans-serif !default;
 // // FONTS
-// $font-body: 'Open Sans', sans-serif;
-// $font-headings: 'Open Sans', sans-serif;
+
+$font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
+$border-radius-xxs: 2px;
 // $border-radius-xs: 4px;
 // $border-radius-sm: 8px;
 // $border-radius-pill: 64px;
@@ -73,10 +84,18 @@ $low-500: #2a327f;
 @import './components/events-stats-cards';
 @import './components/home-map';
 @import './components/home-prosas-notices';
+@import './components/home-description';
 @import './layouts/home-register';
 @import './layouts/main-footer';
+@import './layouts/main-header';
 @import './pages/search';
+
 
 .mc-header-logo {
     max-width: 9rem;
+}
+
+
+:root{
+    --mc-font-title: #{$font-title};
 }

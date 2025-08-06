@@ -28,6 +28,7 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
 
         $app->hook('template(<<*>>.head):end', function () {
             $this->part('google-analytics--script');
+            $this->part('clarity--script');
         });
         $app->hook("ApiQuery(<<project|opportunity|event|space>>).params", function(&$api_params) use($app) {
             if($subsite = $app->subsite){
