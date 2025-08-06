@@ -20,24 +20,23 @@
 
 	&__header {
 
-		&.title {
+		&--title {
 			display: flex;
 			justify-content: space-between;
 			margin: 0;
 
 			label {
-				font-size: size(32);
-				font-weight: 700;
-				line-height: size(44);
+				font-family: 'League Gothic', sans-serif;
+				font-size: size(70);
+				font-weight: 400;
 			 
 				@media (max-width: size(500)) {
-					font-size: size(24);
-					line-height: size(28);
+					font-size: size(60);
 				}
 			}
 		}
 
-		&.description {
+		&--description {
 			font-size: size(16);
 			font-weight: 400;
 			line-height: size(22);
@@ -71,14 +70,15 @@
 
 		prosas-listagem-editais::part(item-nome) {
 			font-weight: 900;
-			font-size: size(17);
+			font-size: size(16);
+			color: #181b4e;
 			margin-bottom: size(10);
-			color: $button;
 		}
 
 		prosas-listagem-editais::part(global-text item-nome-incentivador) {
 			font-weight: 600 !important;
 			font-size: size(13);
+			color: #181b4e !important;
 			margin-bottom: size(25) !important;
 		}
 
@@ -100,11 +100,30 @@
 			font-size: size(14.5);
 		}
 
-		prosas-listagem-editais::part(edital-data-inscricao) {
+		// prosas-listagem-editais::part(item-data-section) {
+		// 	padding: 0;
+		// }
+
+		// prosas-listagem-editais::part(item-info-section) {
+		// 	padding: 0;
+		// }
+
+		prosas-listagem-editais::part(edital-data-inscricao), prosas-listagem-editais::part(edital-data-prorrogacao) {
 			font-weight: 700;
-			border-width: 0;
-			margin-top: size(10);
-			color: $low-500;
+			padding: 0;
+			font-size: size(14.5);
+		}
+
+		.openNotices {
+			prosas-listagem-editais::part(item-data-section), prosas-listagem-editais::part(edital-data-inscricao), prosas-listagem-editais::part(edital-data-prorrogacao) {
+				color: #008D38;
+			}
+		}
+
+		.closedNotices {
+			prosas-listagem-editais::part(global-text), prosas-listagem-editais::part(item-data-section), prosas-listagem-editais::part(edital-data-inscricao), prosas-listagem-editais::part(edital-data-prorrogacao) {
+				color: #C40C0C;
+			}
 		}
 
 		prosas-listagem-editais::part(global-text item-tag-text) {
@@ -113,10 +132,10 @@
 			margin-bottom: 0 !important;
 		}
 
-		prosas-listagem-editais::part(edital-info-text edital-info-tag) {
-			color: $white !important;
-			background-color: $button !important;
-			height: size(27) !important;
-		}
+		// prosas-listagem-editais::part(edital-info-text edital-info-tag) {
+		// 	color: $white !important;
+		// 	background-color: $button !important;
+		// 	height: size(27) !important;
+		// }
 	}
 }

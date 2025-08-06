@@ -11,21 +11,22 @@ $config = $app->config['social-media'];
 
 $image_url_funarte = $app->view->asset('img/logo-funarte.png', false);
 $image_url_governo = $app->view->asset('img/logo-governo-federal.png', false);
+$image_url_footer = $app->view->asset('img/logo-footer.png', false);
 
 $entities = [
-    'opportunities' => [
-        'searchLabel' => 'Editais e Oportunidades',
-        'panelLabel'  => 'Minhas oportunidades',
-        'icon'        => 'opportunity'
-    ],
     'events' => [
-        'searchLabel' => 'Eventos',
+        'searchLabel' => 'Agenda',
         'panelLabel'  => 'Meus eventos',
         'icon'        => 'event'
     ],
+    'opportunities' => [
+        'searchLabel' => 'Oportunidades',
+        'panelLabel'  => 'Minhas oportunidades',
+        'icon'        => 'opportunity'
+    ],
     'agents' => [
-        'searchLabel' => 'Artistas',
-        'panelLabel'  => 'Meus artistas',
+        'searchLabel' => 'Agentes',
+        'panelLabel'  => 'Meus agentes',
         'icon'        => 'agent'
     ],
     'spaces' => [
@@ -33,10 +34,11 @@ $entities = [
         'panelLabel'  => 'Meus espaços',
         'icon'        => 'space'
     ],
+    // TODO: AJUSTAR PARA A TELA DE CIRCUITOS (ASSIM COMO A CHAVE DO DICIONÁRIO)
     'projects' => [
-        'searchLabel' => 'Iniciativas',
+        'searchLabel' => 'Circuitos',
         'panelLabel'  => 'Minhas iniciativas',
-        'icon'        => 'project'
+        'icon'        => 'event'
     ],
 ];
 ?>
@@ -51,8 +53,8 @@ $entities = [
         </div>
 
         <div class="main-footer__content--logo-group">
+            <div class="main-footer__logo-item"><img src="<?= $image_url_footer ?>" alt="Logo Rede Mapas" style="width: 100px; height: auto;" /></div>
             <div class="main-footer__logo-item"><img src="<?= $image_url_funarte ?>" alt="Logo Funarte" /></div>
-            <div class="main-footer__logo-item"><theme-logo href="<?= $app->createUrl('site', 'index') ?>"></theme-logo></div>
             <div class="main-footer__logo-item"><img src="<?= $image_url_governo ?>" alt="Logo Governo Federal" /></div>
         </div>
         <?php $this->applyTemplateHook("main-footer-logo", "after") ?>
@@ -66,7 +68,7 @@ $entities = [
                     <?php foreach ($entities as $key => $entity): ?>
                         <li v-if="global.enabledEntities.<?= $key ?>">
                             <a href="<?= $app->createUrl('search', $key) ?>">
-                                <mc-icon name="<?= $entity['icon'] ?>"></mc-icon> <?php i::_e($entity['searchLabel']) ?>
+                                <?php i::_e($entity['searchLabel']) ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -76,10 +78,16 @@ $entities = [
                     <li>
                         <a href="<?= $app->createUrl('panel', 'index') ?>"><?php i::_e('Painel de controle'); ?></a>
                     </li>
-                    <?php foreach ($entities as $key => $entity): ?>
-                        <li v-if="global.enabledEntities.<?= $key ?>">
-                            <a href="<?= $app->createUrl('panel', $key) ?>"><?php i::_e($entity['panelLabel']) ?></a>
-                        </li>
+                    <?php
+                        // TODO: AJUSTAR A CHAVE PROJECTS PARA A DE CIRCUITO)
+                        $order = ['events', 'opportunities', 'agents', 'spaces', 'projects'];
+                        foreach ($order as $key):
+                            if (!isset($entities[$key])) continue;
+                            $entity = $entities[$key];
+                        ?>
+                            <li v-if="global.enabledEntities.<?= $key ?>">
+                                <a href="<?= $app->createUrl('panel', $key) ?>"><?php i::_e($entity['panelLabel']) ?></a>
+                            </li>
                     <?php endforeach; ?>
                     <?php if (!($app->user->is('guest'))) : ?>
                         <li>
@@ -91,6 +99,12 @@ $entities = [
                 <ul class="main-footer__content--links-group">
                     <li><a><?php i::_e('Ajuda e privacidade'); ?></a></li>
                     <li><a href="<?= $app->createUrl('faq') ?>"><?php i::_e('Dúvidas frequentes'); ?></a></li>
+                    <li>
+                        <a href="https://github.com/redeMapas/mapas" target="_blank"><?php i::_e('Conheça o repositório'); ?></a>
+                    </li>
+                    <li>
+                        <a href="https://manual.mapas.tec.br/ " target="_blank"><?php i::_e('Acesse os manuais'); ?></a>
+                    </li>
 
                     <?php if (!empty($app->config['module.LGPD'])): ?>
                         <?php foreach ($app->config['module.LGPD'] as $slug => $cfg): ?>
@@ -99,13 +113,6 @@ $entities = [
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
-
-                    <li>
-                        <a href="https://github.com/redeMapas/mapas" target="_blank"><?php i::_e('Conheça o repositório'); ?></a>
-                    </li>
-                    <li>
-                        <a href="https://redemapas.github.io/manual" target="_blank"><?php i::_e('Acesse os manuais'); ?></a>
-                    </li>
 
                     <div class="main-footer__content--logo-share">
                         <?php foreach ($config as $conf): ?>
@@ -128,6 +135,8 @@ $entities = [
         <p>
             <strong><?php i::_e('Versão Beta') ?></strong>
             <?php i::_e('Você está em uma versão de teste da plataforma. Se encontrar qualquer divergência ou tiver dúvidas, entre em contato com o suporte.') ?>
+            <br/>
+            <?php i::_e('Desenvolvido por Laboratório do Futuro da Universidade Federal do Ceará.') ?>
         </p>
     </div>
 </div>
