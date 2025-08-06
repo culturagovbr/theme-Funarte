@@ -71,13 +71,13 @@ $this->import('
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'after') ?>
                 <!-- TODO: DESIGN PENDENTE -> Redirecionar para a nova tela de circuitos -->
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'before') ?>
-                <li v-if="global.enabledEntities.spaces">
+                <!-- <li v-if="global.enabledEntities.spaces">
                     <?php $this->applyTemplateHook('mc-header-menu-spaces', 'begin') ?>
                     <a href="<?= $app->createUrl('search', 'spaces') ?>" class="mc-header-menu--item spaces">
                         <p class="label"> <?php i::_e('Circuitos') ?> </p>
                     </a>
                     <?php $this->applyTemplateHook('mc-header-menu-spaces', 'end') ?>
-                </li>
+                </li> -->
                 <?php $this->applyTemplateHook('mc-header-menu-spaces', 'after') ?>
                 
                 <?php $this->applyTemplateHook('mc-header-menu', 'end') ?>
