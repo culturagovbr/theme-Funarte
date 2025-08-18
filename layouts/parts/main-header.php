@@ -54,7 +54,7 @@ $this->import('
                 <?php $this->applyTemplateHook('mc-header-menu-agent', 'before') ?>
                 <li v-if="global.enabledEntities.agents">
                     <?php $this->applyTemplateHook('mc-header-menu-agent', 'begin') ?>
-                    <a href="<?= $app->createUrl('search', 'agents') ?>" class="mc-header-menu--item agent">
+                    <a href="<?= $app->createUrl('funarte_search', 'agents') ?>" class="mc-header-menu--item agent">
                         <p class="label"> <?php i::_e('Agentes') ?> </p>
                     </a>
                     <?php $this->applyTemplateHook('mc-header-menu-agent', 'end') ?>

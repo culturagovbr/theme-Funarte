@@ -120,7 +120,7 @@ return [
         'default_action_name' => 'index',
         'shortcuts' => [
             // busca
-            'agentes'           => ['search', 'agents'],
+            'agentes'           => ['funarte_search', 'agents'],
             'eventos'           => ['search', 'events'],
             'espacos'           => ['search', 'spaces'],
             'oportunidades'     => ['search', 'opportunities'],
