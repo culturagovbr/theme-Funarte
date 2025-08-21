@@ -28,14 +28,6 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
         parent::__construct($config);
     }
 
-    function __construct($config = [])
-    {
-        $app = App::i();
-        $app->config['Metabase']['enabled'] = env('METABASE_FUNARTE_ENABLED', true);
-
-        parent::__construct($config);
-    }
-
     function _init()
     {
         parent::_init();
