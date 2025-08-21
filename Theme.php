@@ -20,6 +20,14 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
         $app->registerController('funarte_search', 'Funarte\SearchController');
     }
 
+    function __construct($config = [])
+    {
+        $app = App::i();
+        $app->config['Metabase']['enabled'] = env('METABASE_FUNARTE_ENABLED', true);
+
+        parent::__construct($config);
+    }
+
     function _init()
     {
         parent::_init();
