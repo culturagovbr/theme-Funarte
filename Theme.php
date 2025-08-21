@@ -12,6 +12,21 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
     {
         return __DIR__;
     }
+    
+    public function register()
+    {
+        parent::register();
+        $app = \MapasCulturais\App::i();
+        $app->registerController('funarte_search', 'Funarte\SearchController');
+    }
+
+    function __construct($config = [])
+    {
+        $app = App::i();
+        $app->config['Metabase']['enabled'] = env('METABASE_FUNARTE_ENABLED', true);
+
+        parent::__construct($config);
+    }
 
     function __construct($config = [])
     {
@@ -30,11 +45,7 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
             $this->part('google-analytics--script');
             $this->part('clarity--script');
         });
-        $app->hook("ApiQuery(<<project|opportunity|event|space|agent|seal>>).params", function(&$api_params) use($app) {
-            if($subsite = $app->subsite){
-                $api_params['_subsiteId'] = API::EQ($subsite->id);
-            }
-        });
+
 
         $app->hook('template(<<*>>.<<*>>.body):after', function(){
             $this->part('glpi--script');
