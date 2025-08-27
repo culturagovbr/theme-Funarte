@@ -5,8 +5,7 @@ namespace Funarte;
 use MapasCulturais\App;
 use MapasCulturais\API;
 
-// class Theme extends \Subsite\Theme {
-class Theme extends \MapasCulturais\Themes\BaseV2\Theme
+class Theme extends \BaseTheme\Theme
 {
     static function getThemeFolder()
     {
