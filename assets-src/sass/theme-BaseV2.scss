@@ -96,7 +96,6 @@ $border-radius-xxs: 2px;
     max-width: 9rem;
 }
 
-
 :root{
     --mc-font-title: #{$font-title};
 }
@@ -217,4 +216,16 @@ $border-radius-xxs: 2px;
     .mc-tab-content {
         padding-top: 0;
     }
+}
+// ativacao do menu de circuitos
+.controller-circuitos .mc-header-menu--item.circuitos .icon {
+  background-color:#F24797;
+}
+
+.mc-header-menu--item.circuitos:hover .icon {
+  background-color:#F24797;
+}
+
+.controller-circuitos .mc-header-menu--item.circuitos .label {
+  color: #F24797;
 }
