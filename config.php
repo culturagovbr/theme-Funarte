@@ -315,4 +315,11 @@ return [
             ]
         ]
     ],
+
+    # METABASE
+    'Metabase' => [
+        'config' => [
+            'links' => []
+        ]
+    ]
 ];
