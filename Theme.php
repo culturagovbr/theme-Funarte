@@ -145,7 +145,7 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
         });
 
         $app->hook("component(mc-icon).iconset", function(&$icon){
-            $icon['circuitos'] = "ph:pinwheel-fill";
+            $icon['project'] = "ph:pinwheel-fill";
         });
 
     }
