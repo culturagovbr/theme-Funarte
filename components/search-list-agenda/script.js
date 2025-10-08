@@ -32,6 +32,18 @@ app.component('search-list-agenda', {
     },
 
     props: {
+        groupByEvent: {
+            type: Boolean,
+            default: false,
+        },
+        compact: {
+            type: Boolean,
+            default: false,
+        },
+        perEventLimit: {
+            type: Number,
+            default: 3,
+        },
         limit: {
             type: Number,
             default: 20,
@@ -48,6 +60,25 @@ app.component('search-list-agenda', {
             type: Object,
             required: true
         }
+    },
+
+    computed: {
+        groupedEvents() {
+            if (!this.groupByEvent) return [];
+            const byId = {};
+            for (const occ of this.occurrences) {
+                const ev = occ.event;
+                if (!ev || !ev.id) continue;
+                const key = ev.id;
+                if (!byId[key]) {
+                    byId[key] = { event: ev, occurrences: [] };
+                }
+                if (byId[key].occurrences.length < this.perEventLimit) {
+                    byId[key].occurrences.push(occ);
+                }
+            }
+            return Object.values(byId);
+        },
     },
 
     methods: {

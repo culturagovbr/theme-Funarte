@@ -229,3 +229,61 @@ $border-radius-xxs: 2px;
 .controller-circuitos .mc-header-menu--item.circuitos .label {
   color: #F24797;
 }
+
+
+
+.project-occurrences {
+    margin-top: 0.75rem;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    background: var(--color-neutral-000);
+}
+.project-occurrences__section {
+    margin-top: 0.25rem;
+}
+.project-occurrences__section h4 {
+    margin: 0.25rem 0 0.5rem 0;
+    font-size: .95rem;
+}
+.project-occurrences__events ul,
+.project-occurrences__occurs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.project-occurrences__events li,
+.project-occurrences__occurs li {
+    margin: .25rem 0;
+}
+.project-occurrences__meta {
+    color: var(--color-neutral-700);
+    font-size: .9rem;
+}
+.project-occurrences__more {
+    margin-top: .5rem;
+}
+
+
+
+.search-list__cards > .grid-12 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.search-list__cards .col-4 {
+    flex: 0 0 calc(33.333% - 1rem);
+    box-sizing: border-box;
+}
+
+
+
+
+
+.compact-event-group { margin: .75rem 0 1rem 0; }
+.compact-event-title { font-weight: 600; display: inline-block; margin-bottom: .25rem; }
+.compact-occ-list { list-style: none; padding: 0; margin: 0; }
+.compact-occ-list li { font-size: .95rem; color: var(--color-neutral-800); margin: .15rem 0; }
+.compact-occ-list a { color: inherit; text-decoration: underline; }
