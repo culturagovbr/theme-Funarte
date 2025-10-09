@@ -333,6 +333,36 @@ $border-radius-xxs: 2px;
                 color: var(--mc-primary-500);
             }
 
+            .entity-seals {
+                display: inline-block;
+                
+                .entity-seals__seals--seal {
+                    display: inline-block;
+                }
+                .seal-icon,
+                .seal-label {
+                    display: inline-block;
+                    line-height: 24px;
+                    vertical-align: middle;
+                    font-weight: normal;
+                }
+
+                .seal-icon {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .seal-icon .mc-avatar--small {
+                    width: 24px;
+                    height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                }
+
+                .seal-label {
+                    margin: 0 0 0 5px;
+                }
+            }
         }
 
 
@@ -347,46 +377,9 @@ $border-radius-xxs: 2px;
             }
         }
 
-        // Campo selos - estilo especial
-        &.field--seals {
-            /* .field__label {
-                display: inline-block;
-            } */
-
-            .field__content {
-                display: inline-block;
-            }
-
-            .field__list {
-                margin: 0;
-                padding: 0;
-                display: inline-block;
-                list-style: none;
-            }
-
-            .field__list-item {
-                display: inline-block;
-                align-items: center;
-                /* border-radius: 12px;
-                background: rgba(228, 6, 53, 0.1);
-                border: 1px solid rgba(228, 6, 53, 0.3); */
-
-                .field__icon {
-                    width: 24px !important;
-                    height: 24px !important;
-                    font-size: 24px !important;
-                    display: inline;
-                    vertical-align: middle;
-                    margin-right: 8px;
-                }
-
-                .field__text {
-                    font-size: 14px !important;
-                    font-weight: normal !important;
-                    color: #333;
-                }
-            }
-        }
+    }
+    .entity-card__footer {
+        margin-top: 20px;
     }
 }
 
@@ -394,8 +387,6 @@ $border-radius-xxs: 2px;
 // Agenda dos Circuitos - Layout horizontal com scroll
 .entity-card {
     .entity-card__agenda {
-        padding: 20px 0;
-
         .agenda-section {
             .agenda-header {
                 margin-bottom: 20px;
@@ -432,7 +423,6 @@ $border-radius-xxs: 2px;
 
                 .no-events-message {
                     text-align: center;
-                    padding: 40px;
                     color: #6c757d;
 
                     .mc-icon {

@@ -15,7 +15,6 @@ $this->import('search-list-agenda');
             <span>Carregando agenda...</span>
         </div>
     </div>
-    
     <search-list-agenda 
         v-if="isVisible"
         ref="agendaList"
@@ -26,9 +25,6 @@ $this->import('search-list-agenda');
         :select="select"
         :space-select="spaceSelect"
     />
-    
-
-    
     <!-- Fallback: Botão manual caso o observer falhe -->
     <div v-if="!isVisible && !hasLoaded" class="manual-load">
         <button @click="forceLoad" class="button button--primary-outline">

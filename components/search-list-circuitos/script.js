@@ -12,7 +12,7 @@ app.component('search-list-circuitos', {
         return {
             query: {},
             typeText: '',
-            selectedOrder: 'createTimestamp DESC',
+            selectedOrder: 'startsOn, updateTimestamp DESC',
         }
     },
 

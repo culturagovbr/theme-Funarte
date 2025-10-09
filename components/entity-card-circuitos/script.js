@@ -123,12 +123,31 @@ app.component('entity-card-circuitos', {
 
         // Agenda computed properties
         agendaPseudoQuery() {
-            const d = new Date();
-            const yyyy = d.getFullYear();
+            // Carregar todas as ocorrências do projeto dentro de um intervalo amplo.
+            // Preferir datas do próprio projeto quando disponíveis.
+            const now = new Date();
+            let from = `${now.getFullYear() - 10}-01-01`;
+            let to = `${now.getFullYear() + 1}-12-31`; // Inclui sempre o próximo ano
+
+            try {
+                if (this.entity.startsOn) {
+                    const y0 = this.entity.startsOn.year();
+                    from = `${y0}-01-01`;
+                }
+                if (this.entity.endsOn) {
+                    const y1 = this.entity.endsOn.year();
+                    // Garante que o intervalo inclua pelo menos o próximo ano
+                    const maxYear = Math.max(y1, now.getFullYear() + 1);
+                    to = `${maxYear}-12-31`;
+                }
+            } catch (e) {
+                // fallback mantém o intervalo amplo
+            }
+
             return {
                 'event:project': this.entity.id,
-                '@from': `${yyyy}-01-01`,
-                '@to': `${yyyy}-12-31`
+                '@from': from,
+                '@to': to
             };
         },
 

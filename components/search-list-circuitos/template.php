@@ -28,59 +28,23 @@ $this->import('
                 </div>
             </div>
             <div v-if="entities.loading" class="col-8">
-                <div class="grid-12">
-                    <div class="col-12 search-list__order">
-                        <div class="field">
-                            <select v-model="selectedOrder">
-                                <option value="name ASC"> <?php i::_e('Ordem alfabética (A - Z)') ?> </option>
-                                <option value="name DESC"> <?php i::_e('Ordem alfabética (Z - A)') ?> </option>
-                                <option value="createTimestamp ASC"> <?php i::_e('Mais antigas primeiro') ?> </option>
-                                <option value="createTimestamp DESC"> <?php i::_e('Mais recentes primeiro') ?> </option>
-                                <option value="updateTimestamp DESC"> <?php i::_e('Modificadas recentemente') ?> </option>
-                                <option value="updateTimestamp ASC"> <?php i::_e('Modificadas há mais tempo') ?> </option>
-                                <option v-if="type == 'opportunity'" value="registrationFrom ASC"> <?php i::_e('Início das inscrições (recentes-antigas)') ?> </option>
-                                <option v-if="type == 'opportunity'" value="registrationFrom DESC"> <?php i::_e('Início das inscrições (antigas-recentes)') ?> </option>
-                            </select>
-                        </div>
-                        <div class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?>
-                        </div>
-                    </div>
-                </div>
+                <div class="grid-12"></div>
             </div>
         </template>
 
         <template #default="{entities}">
             <div class="col-9">
                 <div class="grid-12">
-                    <div class="col-12 search-list__order">
-                        <div class="field">
-                            <select v-model="selectedOrder">
-                                <option value="name ASC"> <?php i::_e('Ordem alfabética (A - Z)') ?> </option>
-                                <option value="name DESC"> <?php i::_e('Ordem alfabética (Z - A)') ?> </option>
-                                <option value="createTimestamp ASC"> <?php i::_e('Mais antigas primeiro') ?> </option>
-                                <option value="createTimestamp DESC"> <?php i::_e('Mais recentes primeiro') ?> </option>
-                                <option value="updateTimestamp DESC"> <?php i::_e('Modificadas recentemente') ?> </option>
-                                <option value="updateTimestamp ASC"> <?php i::_e('Modificadas há mais tempo') ?> </option>
-                                <option v-if="type == 'opportunity'" value="registrationFrom ASC"> <?php i::_e('Início das inscrições (recentes-antigas)') ?> </option>
-                                <option v-if="type == 'opportunity'" value="registrationFrom DESC"> <?php i::_e('Início das inscrições (antigas-recentes)') ?> </option>
-                            </select>
-                        </div>
-                        <div v-if="entityType=='Oportunidades'" class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontradas') ?>
-                        </div>
-                        <div v-if="entityType!='Oportunidades'" class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?>
-                        </div>
-                    </div>
-
                     <div class="col-12" v-for="entity in entities" :key="entity.__objectId">
                         <entity-card-circuitos :entity="entity">
                             <template #avatar>
                                 <mc-avatar :entity="entity" size="medium"></mc-avatar>
                             </template>
-                            <template #type> <span>{{typeText}} <span :class="['upper', entity.__objectType+'__color']">{{entity.type?.name}}</span></span></template>
-
+                            <template #type>
+                                <span>{{typeText}} 
+                                    <span :class="['upper', entity.__objectType+'__color']">{{entity.type?.name}}</span>
+                                </span>
+                            </template>
                         </entity-card-circuitos>
                         <slot name="item-append" :entity="entity"></slot>
                     </div>

@@ -11,6 +11,7 @@ $this->import('
     mc-icon
     mc-title
     mc-loading
+    entity-seals
 ');
 ?>
 <div class="entity-card" :class="classes">
@@ -61,20 +62,7 @@ $this->import('
                 <?php i::_e("Selos"); ?>:
             </div>
             <div class="field__content">
-                <ul class="field__list">
-                    <li v-for="seal in entity.seals" class="field__list-item">
-                        <img v-if="seal.files?.avatar?.transformations?.avatarSmall"
-                             :src="seal.files.avatar.transformations.avatarSmall.url"
-                             :alt="seal.name"
-                             class="field__icon" />
-                        <img v-else-if="seal.avatar?.avatarSmall"
-                             :src="seal.avatar.avatarSmall.url"
-                             :alt="seal.name"
-                             class="field__icon" />
-                        <mc-icon v-else name="seal" class="field__icon"></mc-icon>
-                        <span class="field__text">{{ seal.name }}</span>
-                    </li>
-                </ul>
+                <entity-seals :entity="entity" showName="true" title=""></entity-seals>
             </div>
         </div>
 
@@ -103,8 +91,10 @@ $this->import('
                     </div>
 
                     <div v-else-if="!hasAgendaEvents && hasAgendaLoaded" class="no-events-message">
-                        <mc-icon name="calendar"></mc-icon>
-                        <p><?php i::_e('Não há eventos cadastrados para este projeto.') ?></p>
+                        <p>
+                            <mc-icon name="calendar"></mc-icon>
+                            <?php i::_e('Não há eventos cadastrados para este projeto.') ?>
+                        </p>
                     </div>
 
                     <div v-else-if="hasAgendaEvents" class="agenda-events">
@@ -147,8 +137,6 @@ $this->import('
                 </div>
             </div>
         </div>
-    </div>
-
     <div class="entity-card__footer">
         <div class="entity-card__footer--info">
 
@@ -161,3 +149,4 @@ $this->import('
             </a>
         </div>
     </div>
+</div>
