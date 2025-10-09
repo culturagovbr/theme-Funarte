@@ -1,9 +1,9 @@
-app.component('search-list', {
-    template: $TEMPLATES['search-list'],
+app.component('search-list-circuitos', {
+    template: $TEMPLATES['search-list-circuitos'],
 
     setup() {
-        // os textos estão localizados no arquivo texts.php deste componente 
-        const text = Utils.getTexts('search-list');
+        // os textos estão localizados no arquivo texts.php deste componente
+        const text = Utils.getTexts('search-list-circuitos');
 
         return { text }
     },
@@ -18,9 +18,9 @@ app.component('search-list', {
 
     created() {
         if (this.type == "agent") {
-            this.typeText = __('text', 'search-list');
+            this.typeText = __('text', 'search-list-circuitos');
         }else {
-            this.typeText = __('label', 'search-list');
+            this.typeText = __('label', 'search-list-circuitos');
         }
     },
 
@@ -75,7 +75,7 @@ app.component('search-list', {
             if (this.selectedOrder) {
                 return this.selectedOrder;
             }
-    
+
             const keyword = this.pseudoQuery['@keyword'] ?? '';
             if ($DESCRIPTIONS[this.type].name && keyword.length >= 3) {
                 return 'name ASC';

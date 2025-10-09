@@ -22,7 +22,7 @@ $this->import('
         </div>   -->
         <div class="field">
             <label> <?php i::_e('Selos') ?></label>
-            <mc-multiselect class="col-3 sm:col-4" :model="pseudoQuery['@seals']" :items="sealsNames" placeholder="<?= i::esc_attr__('Todos') ?>" :hide-filter="hideFilters" hide-button></mc-multiselect>
+            <mc-multiselect class="col-3 sm:col-4" :model="pseudoQuery['@seals']" :items="sealsNames" placeholder="<?= i::esc_attr__('Todos') ?>" hide-button></mc-multiselect>
             <mc-tag-list editable :tags="pseudoQuery['@seals']" :labels="sealsLabels" classes="event__background event__color"></mc-tag-list>
         </div>
         <div class="field">

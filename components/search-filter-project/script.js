@@ -2,7 +2,7 @@ app.component('search-filter-project', {
     template: $TEMPLATES['search-filter-project'],
 
     setup() {
-        // os textos estão localizados no arquivo texts.php deste componente 
+        // os textos estão localizados no arquivo texts.php deste componente
         const text = Utils.getTexts('search-filter-project')
         return { text }
     },
@@ -24,7 +24,8 @@ app.component('search-filter-project', {
             sealsNames: $MAPAS.config.projectTable.seals.map(seal => ({
                 value: seal.id,
                 label: seal.name
-            })),        
+            })),
+            sealsLabels: Object.fromEntries($MAPAS.config.projectTable.seals.map(seal => [seal.id, seal.name])),
         }
     },
 

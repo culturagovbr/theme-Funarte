@@ -7,7 +7,7 @@
 use MapasCulturais\i;
 
 $this->import('
-    entity-card
+    entity-card-circuitos
     mc-avatar
     mc-entities
 ');
@@ -43,7 +43,7 @@ $this->import('
                             </select>
                         </div>
                         <div class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?> 
+                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?>
                         </div>
                     </div>
                 </div>
@@ -67,20 +67,21 @@ $this->import('
                             </select>
                         </div>
                         <div v-if="entityType=='Oportunidades'" class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontradas') ?> 
+                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontradas') ?>
                         </div>
                         <div v-if="entityType!='Oportunidades'" class="foundResults">
-                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?> 
+                            {{entities.metadata.count}} {{entityType}} <?= i::__('encontrados') ?>
                         </div>
                     </div>
 
                     <div class="col-12" v-for="entity in entities" :key="entity.__objectId">
-                        <entity-card :entity="entity">
+                        <entity-card-circuitos :entity="entity">
                             <template #avatar>
                                 <mc-avatar :entity="entity" size="medium"></mc-avatar>
                             </template>
                             <template #type> <span>{{typeText}} <span :class="['upper', entity.__objectType+'__color']">{{entity.type?.name}}</span></span></template>
-                        </entity-card>
+
+                        </entity-card-circuitos>
                         <slot name="item-append" :entity="entity"></slot>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ $this->import('
     create-project
     search
     search-filter-project
-    search-list
+    search-list-circuitos
     search-map
     mc-tabs
     mc-tab
@@ -32,13 +32,13 @@ $this->breadcrumb = [
             <mc-tab icon="list" label="<?php i::esc_attr_e('Lista') ?>" slug="list">
                 <div class="tabs-component__panels">
                     <div class="search__tabs--list">
-                        <search-list :pseudo-query="pseudoQuery" type="project" select="id,name,type,shortDescription,files.avatar,seals,terms" >
+                        <search-list-circuitos :pseudo-query="pseudoQuery" type="project" select="id,name,type,shortDescription,files.avatar,seals,terms,startsOn,endsOn" >
                             <template #filter>
                                 <search-filter-project :pseudo-query="pseudoQuery"></search-filter-project>
                             </template>
                             <template #item-append="{entity}">
                                 <search-list-agenda
-                                    :pseudo-query="(() => { 
+                                    :pseudo-query="(() => {
                                         const d = new Date();
                                         const yyyy = d.getFullYear();
                                         return {
@@ -54,10 +54,10 @@ $this->breadcrumb = [
                                     :per-event-limit="3"
                                 />
                             </template>
-                        </search-list>
+                        </search-list-circuitos>
                     </div>
                 </div>
             </mc-tab>
-            
+
     </template>
 </search>
