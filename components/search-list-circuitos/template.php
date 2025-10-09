@@ -51,7 +51,7 @@ $this->import('
         </template>
 
         <template #default="{entities}">
-            <div class="col-8">
+            <div class="col-9">
                 <div class="grid-12">
                     <div class="col-12 search-list__order">
                         <div class="field">

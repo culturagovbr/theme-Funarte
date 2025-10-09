@@ -195,7 +195,7 @@ $border-radius-xxs: 2px;
         border: 1px solid #e9ecef !important;
         border-radius: 8px !important;
         margin-bottom: size(16);
-        
+
         &:hover {
             background: #ffffff !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
@@ -205,7 +205,7 @@ $border-radius-xxs: 2px;
 
 .seal-entities-tabs {
     margin-top: size(24);
-    
+
     h3 {
         margin: size(24) 0 size(20) 0;
         padding-top: size(8);
@@ -276,4 +276,119 @@ $border-radius-xxs: 2px;
 .seals__name {
     white-space: nowrap;
     font-weight: 500;
+}
+
+// Estilos para entity-card-circuitos - estrutura padronizada
+.entity-card {
+
+    .user-info .mc-title {
+        font-size: 24px;
+    }
+
+
+    .entity-card__content {
+        display: inline-block;
+    }
+
+    // Estrutura geral dos campos
+    .field-card {
+
+
+        // Campo inline (ID + TIPO na mesma linha)
+        &.field--inline {
+            display: inline-block !important;
+            margin-right: 12px;
+        }
+
+        margin-bottom: 12px;
+
+        // Labels padrão (ID, TIPO, PERÍODO, SELOS, TAGS)
+        .field__label {
+            font-size: 14px !important;
+            font-weight: normal !important;
+            text-transform: capitalize !important;
+            color: #333;
+            display: inline;
+            margin-right: 3px;
+
+            // Ícones nos labels
+            .iconify {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 24px !important;
+                margin-left: 4px;
+                display: inline;
+                vertical-align: middle;
+            }
+        }
+
+        // Conteúdo padrão dos campos
+        .field__content {
+            font-size: 14px !important;
+            font-weight: bold !important;
+            color: #333;
+            display: inline;
+
+            &.project__color {
+                color: var(--mc-primary-500);
+            }
+
+        }
+
+
+        // Campo período - conteúdo especial
+        &.field--period {
+            .field__content {
+                font-size: 16px !important;
+                line-height: 1.4;
+                vertical-align: middle;
+                font-weight: bold !important;
+                color: #333 !important;
+            }
+        }
+
+        // Campo selos - estilo especial
+        &.field--seals {
+            /* .field__label {
+                display: inline-block;
+            } */
+
+            .field__content {
+                display: inline-block;
+            }
+
+            .field__list {
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                list-style: none;
+            }
+
+            .field__list-item {
+                display: inline-block;
+                align-items: center;
+                /* border-radius: 12px;
+                background: rgba(228, 6, 53, 0.1);
+                border: 1px solid rgba(228, 6, 53, 0.3); */
+
+                .field__icon {
+                    width: 24px !important;
+                    height: 24px !important;
+                    font-size: 24px !important;
+                    display: inline;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                }
+
+                .field__text {
+                    font-size: 14px !important;
+                    font-weight: normal !important;
+                    color: #333;
+                }
+            }
+        }
+
+    }
+
+
 }
