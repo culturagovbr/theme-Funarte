@@ -147,6 +147,8 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
         $app->hook("component(mc-icon).iconset", function(&$icon){
             $icon['project'] = "ph:pinwheel-fill";
             $icon['calendar'] = "bx:calendar";
+            $icon['map-marker'] = "mdi:map-marker";
+            
         });
 
     }

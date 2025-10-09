@@ -10,7 +10,7 @@ $this->import('
     mc-tabs
     mc-tab
     project-table
-    search-list-agenda
+
 ');
 
 // search-filter-event
@@ -35,24 +35,6 @@ $this->breadcrumb = [
                         <search-list-circuitos :pseudo-query="pseudoQuery" type="project" select="id,name,type,shortDescription,files.avatar,seals,terms,startsOn,endsOn" >
                             <template #filter>
                                 <search-filter-project :pseudo-query="pseudoQuery"></search-filter-project>
-                            </template>
-                            <template #item-append="{entity}">
-                                <search-list-agenda
-                                    :pseudo-query="(() => {
-                                        const d = new Date();
-                                        const yyyy = d.getFullYear();
-                                        return {
-                                            'event:project': entity.id,
-                                            '@from': `${yyyy}-01-01`,
-                                            '@to': `${yyyy}-12-31`
-                                        };
-                                    })()"
-                                    select="id,name,subTitle,files.avatar,seals,terms,classificacaoEtaria,singleUrl,project"
-                                    space-select="id,name,endereco,files.avatar,singleUrl"
-                                    :limit="9"
-                                    :group-by-event="true"
-                                    :per-event-limit="3"
-                                />
                             </template>
                         </search-list-circuitos>
                     </div>

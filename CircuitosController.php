@@ -16,7 +16,8 @@ class CircuitosController extends \MapasCulturais\Controller
 
         // Filtrar projetos que possuem qualquer um destes selos (operador OR)
         $initial_pseudo_query = [
-            '@seals' => '106,107,108,109,110'
+            '@seals' => ['106,107,108,109,110']
+            // '@seals' => ['2']
         ];
 
         $app->applyHookBoundTo($this, 'search-projects-initial-pseudo-query', [&$initial_pseudo_query]);

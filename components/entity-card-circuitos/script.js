@@ -10,7 +10,21 @@ app.component('entity-card-circuitos', {
     },
 
     data() {
-        return {}
+        return {
+            // Agenda
+            agendaOccurrences: [],
+            agendaLoading: false,
+            agendaPage: 1,
+        }
+    },
+
+    created() {
+        this.eventApi = new API('event');
+        this.spaceApi = new API('space');
+    },
+
+    mounted() {
+        this.loadAgenda();
     },
 
     props: {
@@ -33,6 +47,14 @@ app.component('entity-card-circuitos', {
         tag: {
             type: String,
             default: 'h2',
+        },
+        agendaLimit: {
+            type: Number,
+            default: 999999
+        },
+        agendaPerEventLimit: {
+            type: Number,
+            default: 3
         },
     },
 
@@ -97,6 +119,39 @@ app.component('entity-card-circuitos', {
 
         useLabels() {
             return this.openSubscriptions || this.hasSlot('labels')
+        },
+
+        // Agenda computed properties
+        agendaPseudoQuery() {
+            const d = new Date();
+            const yyyy = d.getFullYear();
+            return {
+                'event:project': this.entity.id,
+                '@from': `${yyyy}-01-01`,
+                '@to': `${yyyy}-12-31`
+            };
+        },
+
+        groupedEvents() {
+            const byId = {};
+            for (const occ of this.agendaOccurrences) {
+                const ev = occ.event;
+                if (!ev || !ev.id) continue;
+                const key = ev.id;
+                if (!byId[key]) {
+                    byId[key] = { event: ev, occurrences: [] };
+                }
+                byId[key].occurrences.push(occ);
+            }
+            return Object.values(byId);
+        },
+
+        hasAgendaEvents() {
+            return this.agendaOccurrences && this.agendaOccurrences.length > 0;
+        },
+
+        hasAgendaLoaded() {
+            return !this.agendaLoading && this.agendaOccurrences !== null;
         }
     },
     methods: {
@@ -128,5 +183,43 @@ app.component('entity-card-circuitos', {
             }
             return text;
         },
-    },
+
+        // Agenda methods
+
+
+        async loadAgenda() {
+            if (this.agendaLoading) return;
+
+            const query = Utils.parsePseudoQuery(this.agendaPseudoQuery);
+        
+            this.agendaLoading = true;
+        
+            if (query['@keyword']) {
+                query['event:@keyword'] = query['@keyword'];
+                delete query['@keyword'];
+            }
+        
+            query['event:@select'] = 'id,name,subTitle,files.avatar,seals,terms,classificacaoEtaria,singleUrl,project';
+            query['space:@select'] = 'id,name,endereco,files.avatar,singleUrl';
+            query['@limit'] = this.agendaLimit;
+            query['@page'] = 1;
+        
+            try {
+                const occurrences = await this.eventApi.fetch('occurrences', query, {
+                    raw: true,
+                    rawProcessor: (rawData) => Utils.occurrenceRawProcessor(rawData, this.eventApi, this.spaceApi)
+                });
+            
+                this.agendaOccurrences = occurrences;
+                this.hasAgendaLoaded = true;
+            
+            } catch (error) {
+                console.error('Erro ao carregar agenda:', error);
+            } finally {
+                this.agendaLoading = false;
+            }
+        },
+
+
+    }
 });
