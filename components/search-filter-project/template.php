@@ -14,7 +14,7 @@ $this->import('
     <form class="form">
         <?php $this->applyTemplateHook('search-filter-project', 'begin') ?>
         <label class="form__label">
-            <?= i::_e('Filtros de projeto') ?>
+            <?= i::_e('Filtros') ?>
         </label>
         <!-- <div class="field">
             <label> <?php i::_e('Status do projeto') ?> </label>
