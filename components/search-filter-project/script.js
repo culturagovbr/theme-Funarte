@@ -19,13 +19,17 @@ app.component('search-filter-project', {
     },
 
     data() {
+        const allowedSealIds = $MAPAS.config.funarteCircuitoSeals;
+        const filteredSeals = $MAPAS.config.entityTable.seals.filter(seal =>
+            allowedSealIds.includes(seal.id)
+        );
         return {
             types: $DESCRIPTIONS.project.type.options,
-            sealsNames: $MAPAS.config.projectTable.seals.map(seal => ({
+            sealsNames: filteredSeals.map(seal => ({
                 value: seal.id,
                 label: seal.name
             })),
-            sealsLabels: Object.fromEntries($MAPAS.config.projectTable.seals.map(seal => [seal.id, seal.name])),
+            sealsLabels: Object.fromEntries(filteredSeals.map(seal => [seal.id, seal.name])),
         }
     },
 

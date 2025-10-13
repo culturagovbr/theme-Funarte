@@ -63,7 +63,7 @@ $this->import('
                 <?php i::_e("Selos"); ?>:
             </div>
             <div class="field__content">
-                <entity-seals :entity="entity" showName="true" title=""></entity-seals>
+                <entity-seals :entity="entity" :showName=true title=""></entity-seals>
             </div>
         </div>
 

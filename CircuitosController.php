@@ -13,11 +13,18 @@ class CircuitosController extends \MapasCulturais\Controller
     public function ALL_index()
     {
         $app = App::i();
+        $values = explode(',', $app->config['funarte.circuito_seals']);
+
+        // trim whitespace and convert to number if numeric
+        $numbers = array_map(function($v) {
+            $v = trim($v);
+            // convert to integer or float if numeric
+            return is_numeric($v) ? $v + 0 : $v;
+        }, $values);
 
         // Filtrar projetos que possuem qualquer um destes selos (operador OR)
         $initial_pseudo_query = [
-            '@seals' => ['106,107,108,109,110']
-            // '@seals' => ['2']
+            '@seals' => $numbers,
         ];
 
         $app->applyHookBoundTo($this, 'search-projects-initial-pseudo-query', [&$initial_pseudo_query]);

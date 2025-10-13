@@ -26,7 +26,7 @@ $this->import('
             <mc-tag-list editable :tags="pseudoQuery['@seals']" :labels="sealsLabels" classes="event__background event__color"></mc-tag-list>
         </div>
         <div class="field">
-            <label> <?php i::_e('Tipos de projetos') ?></label>
+            <label> <?php i::_e('Tipos') ?></label>
             <mc-multiselect :model="pseudoQuery['type']" :items="types" placeholder="<?= i::esc_attr__('Selecione os tipos: ') ?>" hide-filter hide-button></mc-multiselect>
             <mc-tag-list editable :tags="pseudoQuery['type']" :labels="types" classes="project__background project__color"></mc-tag-list>
         </div>

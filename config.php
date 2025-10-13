@@ -316,4 +316,5 @@ return [
             ]
         ]
     ],
+    'funarte.circuito_seals' => env('FUNARTE_CIRCUITO_SEALS', '106,107,108,109,110'),
 ];
