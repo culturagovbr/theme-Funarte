@@ -1,4 +1,5 @@
 <?php
+
 use \MapasCulturais\i;
 
 return [
@@ -20,7 +21,7 @@ return [
 
     'text:home-header.title' => 'Boas-vindas à Plataforma Rede das Artes',
     'text:home-header.description' => 'Aqui você encontra e participa de uma rede artística de eventos, circuitos, grupos, coletivos e espaços, entre outros elos das artes visuais, do circo, da dança, da música, do teatro e das artes integradas, de todas as regiões do Brasil.<br><br>🚧 Versão Beta – Teste e Avalie 🚧<br><br>Esta é uma versão preliminar da plataforma, disponível para testes. Se encontrar qualquer divergência ou tiver dúvidas, entre em contato com o suporte. Seu feedback é essencial para melhorias!',
-    
+
     'mailer.templates' => [
         'welcome' => [
             'title' => i::__("Bem-vindo(a) ao Rede das Artes"),
@@ -162,7 +163,7 @@ return [
             'avaliacao' => ['registration', 'evaluation'],
 
 
-            'historico'         => ['entityRevision','history'],
+            'historico'         => ['entityRevision', 'history'],
 
             'sair'              => ['auth', 'logout'],
             'busca'             => ['site', 'search'],
@@ -171,9 +172,9 @@ return [
 
             // LGPD
             'termos-de-uso'             => ['lgpd', 'view', ['termsOfUsage']],
-            'politica-de-privacidade'   => ['lgpd','view', ['privacyPolicy']],
-            'uso-de-imagem'             =>['lgpd', 'view', ['termsUse']],
-            'termos-e-condicoes'        => ['lgpd','accept'],
+            'politica-de-privacidade'   => ['lgpd', 'view', ['privacyPolicy']],
+            'uso-de-imagem'             => ['lgpd', 'view', ['termsUse']],
+            'termos-e-condicoes'        => ['lgpd', 'accept'],
 
             // painel
             'meus-agentes'             => ['panel', 'agents'],
@@ -197,7 +198,7 @@ return [
 
             'gestao-de-usuarios' => ['panel', 'user-management'],
 
-            'certificado' => ['relatedSeal','single'],
+            'certificado' => ['relatedSeal', 'single'],
 
             'perguntas-frequentes' => ['faq', 'index'],
 
@@ -239,15 +240,24 @@ return [
             'panel'         => i::__('Painel'),
             'auth'          => i::__('Autenticação'),
             'site'          => i::__('Site'),
-            'event'         => i::__('Evento'),       'events'        => i::__('Eventos'),
-            'agent'         => i::__('Agente'),       'agents'        => i::__('Agentes'),
-            'space'         => i::__('Espaço'),       'spaces'        => i::__('Espaços'),
-            'project'       => i::__('Projeto'),      'projects'      => i::__('Projetos'),
-            'opportunity'   => i::__('Oportunidade'), 'opportunities' => i::__('Oportunidades'),
-            'registration'  => i::__('Inscrição'),    'registrations' => i::__('Inscrições'),
-            'file'          => i::__('Arquivo'),      'files'         => i::__('Arquivos'),
-            'seal'          => i::__('Selo'),         'seals'         => i::__('Selos'),
-            'entityRevision'=> i::__('Histórico'),    'revisions'     => i::__('Revisões'),
+            'event'         => i::__('Evento'),
+            'events'        => i::__('Eventos'),
+            'agent'         => i::__('Agente'),
+            'agents'        => i::__('Agentes'),
+            'space'         => i::__('Espaço'),
+            'spaces'        => i::__('Espaços'),
+            'project'       => i::__('Projeto'),
+            'projects'      => i::__('Projetos'),
+            'opportunity'   => i::__('Oportunidade'),
+            'opportunities' => i::__('Oportunidades'),
+            'registration'  => i::__('Inscrição'),
+            'registrations' => i::__('Inscrições'),
+            'file'          => i::__('Arquivo'),
+            'files'         => i::__('Arquivos'),
+            'seal'          => i::__('Selo'),
+            'seals'         => i::__('Selos'),
+            'entityRevision' => i::__('Histórico'),
+            'revisions'     => i::__('Revisões'),
             'sealrelation'  => i::__('Certificado'),
             //actions
             'subsite'       => i::__('Subsite'),
@@ -320,6 +330,25 @@ return [
     'Metabase' => [
         'config' => [
             'links' => []
+        ]
+    ],
+
+    # CAPTCHA
+    'captcha' => [
+        'provider' => env('REDE_DAS_ARTES_CAPTCHA_PROVIDER', env('CAPTCHA_PROVIDER', 'google')),
+        'providers' => [
+            'google' => [
+                'url' => 'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit',
+                'verify' => 'https://www.google.com/recaptcha/api/siteverify',
+                'key' => env('REDE_DAS_ARTES_CAPTCHA_SITEKEY', env('CAPTCHA_SITEKEY', null)),
+                'secret' => env('REDE_DAS_ARTES_CAPTCHA_SECRET', env('CAPTCHA_SECRET', null))
+            ],
+            'cloudflare' => [
+                'url' => 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
+                'verify' => 'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+                'key' => env('REDE_DAS_ARTES_CAPTCHA_SITEKEY', env('CAPTCHA_SITEKEY', null)),
+                'secret' => env('REDE_DAS_ARTES_CAPTCHA_SECRET', env('CAPTCHA_SECRET', null))
+            ]
         ]
     ]
 ];
