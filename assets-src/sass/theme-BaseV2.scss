@@ -61,20 +61,6 @@ $font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
 $border-radius-xxs: 2px;
-// $border-radius-xs: 4px;
-// $border-radius-sm: 8px;
-// $border-radius-pill: 64px;
-
-// // Borders
-// $border-hairline: 1px solid;
-// $border-solid: 2px solid;
-
-// // Shadows
-// $shadow-lv-1: 0px 4px 8px rgba(0, 0, 0, 0.16);
-// $shadow-lv-2: 0px 8px 16px rgba(0, 0, 0, 0.16);
-// $shadow-lv-3: 0px 8px 24px rgba(0, 0, 0, 0.16);
-// $shadow-lv-4: 0px 16px 48px rgba(0, 0, 0, 0.16);
-// $shadow-lv-1-up: 0px -4px 8px rgba(0, 0, 0, 0.16);
 
 @import '../../../BaseV2/assets-src/sass/theme-BaseV2';
 
@@ -104,40 +90,6 @@ $border-radius-xxs: 2px;
 .controller-search.action-agents .form > div:nth-child(1) {
     display: none;
 }
-/*
-// melhorias na pagina de eventos na secao de ocorrencias
-.entity-occurrence-list__occurrences .occurrence__card .content__ticket .ticket {
-    font-weight: 900;
-    font-size: 16px;
-}
-
-.entity-occurrence-list__occurrences .occurrence__card .header__title .space__color {
-    color: $primary-500
-}
-
-.entity-occurrence-list__occurrences .occurrence__card .header {
-    width: 100%;
-}
-.entity-occurrence-list__occurrences .occurrence__card .header__title {
-    width: 100%;
-    font-weight: 999;
-}
-
-.entity-occurrence-list__occurrences .occurrence__card .header__link {
-    display: inline-block;
-    width: 20%;
-    margin-top: -35px;
-}
-
-.entity-occurrence-list__occurrences .occurrence__card .address {
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-.entity-occurrence-list__occurrences .occurrence__card .content__price--value .value{
-    font-weight: 999;
-    font-size: 16px;
-} */
-
 
 // Estilos para as entidades que possuem o selo
 .seal-entity-card {
@@ -247,6 +199,9 @@ $border-radius-xxs: 2px;
     color: #333;
     margin: 0 8px 8px 0;
     display: inline-block;
+}
+.entity-seals__title {
+    margin:0;
 }
 
 .seals__list {
@@ -458,7 +413,7 @@ $border-radius-xxs: 2px;
 
                             a {
                                 color: inherit;
-                                text-decoration: none;
+                                text-decoration: underline;
 
                                 &:hover {
                                     text-decoration: underline;
@@ -683,3 +638,13 @@ $border-radius-xxs: 2px;
         }
     }
 }
+
+.controller-circuitos .mc-header-menu--item.project .label {
+  color: var(--mc-projects-500);
+}
+
+.entity-card__footer--action .button {
+    max-width: 272px;
+}
+
+

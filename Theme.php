@@ -140,9 +140,6 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
             $this->json($response);
             return false; 
         });
-        $app->hook('template(<<*>>.<<*>>.mc-header-menu-events):after', function() {
-            $this->part('mc-header-menu-circuitos');
-        });
 
         $app->hook("component(mc-icon).iconset", function(&$icon){
             $icon['project'] = "ph:pinwheel-fill";

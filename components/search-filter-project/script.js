@@ -26,10 +26,12 @@ app.component('search-filter-project', {
         return {
             types: $DESCRIPTIONS.project.type.options,
             sealsNames: filteredSeals.map(seal => ({
-                value: seal.id,
+                // use string values to match mc-multiselect's internal key handling
+                value: String(seal.id),
                 label: seal.name
             })),
-            sealsLabels: Object.fromEntries(filteredSeals.map(seal => [seal.id, seal.name])),
+            // keep labels indexed by stringified id for consistency
+            sealsLabels: Object.fromEntries(filteredSeals.map(seal => [String(seal.id), seal.name])),
         }
     },
 
@@ -37,6 +39,13 @@ app.component('search-filter-project', {
     },
 
     methods: {
+        normalizeSelectedSeals() {
+            if (Array.isArray(this.pseudoQuery['@seals'])) {
+                // ensure all values are strings and remove duplicates
+                const normalized = Array.from(new Set(this.pseudoQuery['@seals'].map(v => String(v))));
+                this.pseudoQuery['@seals'] = normalized;
+            }
+        },
         clearFilters() {
             const types = ['string', 'boolean'];
             for (const key in this.pseudoQuery) {
@@ -47,5 +56,10 @@ app.component('search-filter-project', {
                 }
             }
         }
+    },
+
+    mounted() {
+        // Normalize on mount so preselected seals appear checked and non-duplicable
+        this.normalizeSelectedSeals();
     },
 });

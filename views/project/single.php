@@ -138,17 +138,17 @@ if($children_id ){
                         </mc-entities>
 
                         <div v-if="!entity.children" class="single-project__not-found">
-                            <p class="semibold"><?= i::__('Nenhum subprojeto vinculado.') ?></p>
+                            <p class="semibold"><?= i::__('Nenhuma subsubiniciativa vinculada.') ?></p>
                         </div>
                     </main>
                     <aside>
                         <div class="grid-12">
+                            <entity-owner classes="col-12" title="<?php i::esc_attr_e('Publicado por'); ?>" :entity="entity"></entity-owner>
                             <entity-social-media :entity="entity" classes="col-12"></entity-social-media>
-                            <entity-seals :entity="entity" :editable="entity.currentUserPermissions?.createSealRelation" classes="col-12" title="<?php i::esc_attr_e('Verificações'); ?>"></entity-seals>
+                            <entity-seals :entity="entity" :editable="entity.currentUserPermissions?.createSealRelation" classes="col-12" title="<?php i::esc_attr_e('Selos'); ?>"></entity-seals>
                             <entity-related-agents :entity="entity" classes="col-12" title="<?php i::esc_attr_e('Agentes Relacionados'); ?>"></entity-related-agents>
                             <entity-terms :entity="entity" hide-required classes="col-12" taxonomy="tag" title="<?php i::esc_attr_e('Tags') ?>"></entity-terms>
                             <mc-share-links classes="col-12" title="<?php i::esc_attr_e('Compartilhar'); ?>" text="<?php i::esc_attr_e('Veja este link:'); ?>"></mc-share-links>
-                            <entity-owner classes="col-12" title="<?php i::esc_attr_e('Publicado por'); ?>" :entity="entity"></entity-owner>
                             <entity-admins :entity="entity" classes="col-12"></entity-admins>
                         </div>
                     </aside>
