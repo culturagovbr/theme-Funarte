@@ -121,8 +121,8 @@ return [
         'default_action_name' => 'index',
         'shortcuts' => [
             // busca
-            'agentes'           => ['funarte_search', 'agents'],
             'eventos'           => ['search', 'events'],
+            'agentes'           => ['funarte_search', 'agents'],
             'espacos'           => ['search', 'spaces'],
             'oportunidades'     => ['search', 'opportunities'],
             'iniciativas'          => ['search', 'projects'],
@@ -350,5 +350,6 @@ return [
                 'secret' => env('REDE_DAS_ARTES_CAPTCHA_SECRET', env('CAPTCHA_SECRET', null))
             ]
         ]
-    ]
+    ],
+    'funarte.circuito_seals' => env('FUNARTE_CIRCUITO_SEALS', '106,107,108,109,110'),
 ];
