@@ -12,7 +12,7 @@ $this->import('mc-captcha');
 ?>
 
 <!-- Container principal -->
-<div class="glpi-form-container">
+<div class="glpi-form-container no-print">
   <!-- Status message container -->
   <div id="helpStatusContainer" class="help-status-container">
     <div v-if="statusMessage" :class="['help-status-' + statusType]">
