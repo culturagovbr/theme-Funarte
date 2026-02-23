@@ -647,4 +647,10 @@ $border-radius-xxs: 2px;
     max-width: 272px;
 }
 
-
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
