@@ -12,10 +12,12 @@ $this->import('
     home-map
     home-circuits
     home-description
+    home-data
 ');
 ?>
 <home-header></home-header>
 <home-description></home-description>
+<home-data></home-data>
 <home-entities></home-entities>
 <home-map></home-map>
 <home-register></home-register>
