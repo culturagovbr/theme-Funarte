@@ -55,9 +55,6 @@ $low-500: #2a327f;
 //FONTS
 
 $font-title: 'League Gothic', sans-serif !default;
-// // FONTS
-
-$font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
 $border-radius-xxs: 2px;
@@ -85,6 +82,7 @@ $border-radius-xxs: 2px;
 
 :root{
     --mc-font-title: #{$font-title};
+    --funarte-font-title: #{$font-title};
 }
 
 .controller-search.action-events form .verified,
