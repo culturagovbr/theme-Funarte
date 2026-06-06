@@ -1,13 +1,5 @@
 @use 'sass:color';
 
-@font-face {
-    font-display: swap;
-    font-family: 'League Gothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/league-gothic-v13-latin-regular.woff2') format('woff2');
-}
-
 // COLORS
 $black: #1E1E1E !default;
 $error: #D2381B !default;
