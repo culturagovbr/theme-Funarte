@@ -1,6 +1,6 @@
 .home-data {
   background-color: #FEFAF6;
-  padding: size(80) size(16);
+  padding: size(60) size(16);
 
   &__container {
     display: flex;
@@ -14,6 +14,7 @@
 
     @media (max-width: size(800)) {
       flex-direction: column;
+      gap: size(32);
     }
   }
 
@@ -36,35 +37,127 @@
       color: var(--mc-low-800, #101010);
       margin-bottom: size(24);
     }
+
+    // "Ver Mapa das Artes" button — only shown when no opportunities
+    > .button {
+      display: inline-flex;
+      padding: size(16) size(8);
+      max-width: size(204);
+      background-color: $banner;
+      border-radius: size(8);
+      border: none;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-bold;
+      align-self: center;
+    }
+
+    .button-primary {
+      border: none;
+      background-color: $banner !important;
+    }
   }
+
   &__images {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: size(20);
+    gap: size(12);
     justify-content: end;
+    min-width: 0; // allow shrink below content size
 
-    img {
+    // fallback static images (when no related opportunities)
+    > img {
       width: 100%;
       height: auto;
       margin: 0 auto;
       max-width: size(250);
     }
   }
-  a{
-      padding: size(16) size(8)!important;
-      max-width: size(204);
-      align-self: center;
+
+  // ---- card (linked opportunity) ----
+  &__card {
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      .home-data__card-label {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: size(768)) {
+      flex-direction: column;
+    }
   }
-  .button{
-      background-color: $banner;
-      border-radius: size(8);
-      border: none;
-      font-size:$font-size-xs;
-      font-weight: $font-weight-bold;
+
+  &__card-cover {
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: size(12);
+    position: relative;
+    aspect-ratio: 2 / 1;
+
+    @media (min-width: size(769)) {
+      width: 35%;
+      aspect-ratio: auto;
+      min-height: size(100);
+    }
   }
-  .button-primary{
-      border: none;
-      background-color: $banner !important;
+
+  &__card-avatar {
+    width: size(40);
+    height: size(40);
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background: white;
+    flex-shrink: 0;
+
+    @media (min-width: size(769)) {
+      width: size(48);
+      height: size(48);
+    }
+  }
+
+  &__card-body {
+    padding: size(14) size(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: size(6);
+
+    @media (min-width: size(769)) {
+      width: 65%;
+      padding: size(16) size(20);
+      gap: size(8);
+    }
+  }
+
+  &__card-label {
+    font-family: 'League Gothic', sans-serif;
+    font-size: size(22);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    line-height: 1.1;
+    word-break: break-word;
+
+    @media (min-width: size(769)) {
+      font-size: size(24);
+    }
   }
 }

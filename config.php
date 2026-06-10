@@ -317,4 +317,5 @@ return [
         ]
     ],
     'funarte.circuito_seals' => env('FUNARTE_CIRCUITO_SEALS', '106,107,108,109,110'),
+    'funarte.featured_home_entity' => env('FUNARTE_FEATURED_HOME_ENTITY', '210279'),
 ];
