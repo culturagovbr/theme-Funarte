@@ -58,6 +58,10 @@ class Theme extends \MapasCulturais\Themes\BaseV2\Theme
         });
 
         $app->hook('template(<<*>>.head):end', function () {
+            echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . PHP_EOL;
+            echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . PHP_EOL;
+            echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Gothic&amp;display=swap">' . PHP_EOL;
+
             $this->part('google-analytics--script');
             $this->part('clarity--script');
         });

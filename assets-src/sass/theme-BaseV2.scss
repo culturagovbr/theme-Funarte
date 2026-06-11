@@ -1,5 +1,4 @@
 @use 'sass:color';
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 // COLORS
 $black: #1E1E1E !default;
@@ -55,9 +54,6 @@ $low-500: #2a327f;
 //FONTS
 
 $font-title: 'League Gothic', sans-serif !default;
-// // FONTS
-
-$font-title: 'League Gothic', sans-serif !default;
 
 // // Borders radius
 $border-radius-xxs: 2px;
@@ -85,6 +81,7 @@ $border-radius-xxs: 2px;
 
 :root{
     --mc-font-title: #{$font-title};
+    --funarte-font-title: #{$font-title};
 }
 
 .controller-search.action-events form .verified,
