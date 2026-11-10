@@ -21,5 +21,5 @@ $this->import('
 <home-entities></home-entities>
 <home-map></home-map>
 <home-register></home-register>
-<home-prosas-notices client-id="lsf6jeu7-Wk04P2iSYMdcMhPZUNZqabK8CG6mAfRQ6M" id-list="13726,15300,15543,15338,13901,15191,15860,15861,15862,15863,15864,15287,16104,16835,16912,16829,16831,16832,16833,16826"></home-prosas-notices>
+<home-prosas-notices client-id="lsf6jeu7-Wk04P2iSYMdcMhPZUNZqabK8CG6mAfRQ6M" id-list="13726,15300,15543,15338,13901,15191,15860,15861,15862,15863,15864,15287,16104,16835,16912,16829,16831,16832,16833,16826,17663,17664,17665,17666,17667,19363,19358"></home-prosas-notices>
 <home-circuits></home-circuits> 
